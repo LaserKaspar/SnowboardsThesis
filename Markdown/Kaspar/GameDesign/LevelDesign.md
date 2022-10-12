@@ -4,8 +4,6 @@ Jede Strecke muss linear sein, damit die Spieler nahe beeinander bleiben.
 
 ## <mark>motion sickness</mark>
 
-
-
 # Streckendesigns
 
 ## Iteration 1 - Spirale
@@ -22,46 +20,16 @@ Auch bringt es einige Probleme auf der VR-Seite mit sich. Da die Strecke sehr la
 
 ### PC - Berg-Strecke
 
-Spieler fahren auf einem Berg. Auf dem Berg kann die Strecke in kurven und längeren "geraderen" strecken verlaufen. Das Level-Design ist sehr frei bei dieser Art von Strecke. 
+Spieler fahren auf einem Berg. Auf dem Berg kann die Strecke in Kurven und längeren "geraderen" Strecken verlaufen. Das Level-Design ist sehr frei bei dieser Art von Strecke. Das VR-Spieler müsste sich allerdings permanent um den Berg herumbewegen
+
+### VR - Schallplatte
+
+Die Spielfläche in VR ist in den meisten fällten, vorallem Zuhause, sehr begrenzt. Es muss auch für Personen die nicht sehr viel Platz haben möglich sein, den ganzen Berg zu umrunden. Das Rotieren des Berges macht technische Probleme, daher können wir ihn nicht rotieren. Der Spieler darf allerdings nie das Gefühl haben, dass wir ihn bewegen.
+
+Um das möglich zu machem, haben wir die "Schallplatte" erfunden. Sie macht es möglich einfach mit den verscheidenen Stellen der Strecke und den Objekten in dem VR-Space zu interagieren, ohne dass "Motionsickness" zu einem größeren Problem wird, da der VR-Spieler das gefühl hat als würde sich der Berg rotieren.
+
+Um dem VR-Spieler aber trodzdem nicht in der Auswahl seiner Spells beschränken zu müssen, muss man die Maschienen in zwei Bereichen aufteilen. Zwischen diesen Bereichen kann der VR-Spieler wechseln indem er einen Knopf drückt. Dadurch können wir dem VR-Spieler mehr Spells zugänglich machen, ohne dass wir ihn bewegen müssen.
 
 #### Verschiebbare Obstacles
 
 Um den Spielern etwas mehr diversität auf einer einzigen Strecke bieten zu können, kann der VR-Spieler bereiche der Strecke aus und einschalten. Das kann aufgrund der Reaktionszeit der PC-Spieler allerdings nur dann möglich sein, wenn die spieler noch weit genug davon entfernt sein. Damit die Strecke Lienear bleibt, kann der VR-Spieler den Verlauf der Strecke nur verändern, indem er Blockaden der Strecken verschiebt.
-
-### VR - Schallplatte
-
-Die Spielfläche in VR ist in den meisten fällten, vorallem Zuhause, sehr begrenzt. Es muss auch für Personen die nicht sehr viel Platz haben möglich sein, den ganzen berg zu umrunden. Um das möglich zu machem, haben wir die "Schallplatte" erfunden. Sie macht es möglich einfach mit den verscheidenen Stellen der Strecke und den Objekten in dem VR-Space zu interagieren, ohne dass "Motionsickness" zu einem größeren problem wird. 
-
-# Pickups (PC Interactables)
-
-## Speed
-
-## Jumpads
-
-## Health
-
-## Instant revive?
-
-# Spells (VR Interactables)
-
-## The 3 Spell-Types
-
-### Instant
-
-Kann nicht direkt auf den Spielern platziert werden. Muss Strathegisch platziert werden.
-
-### Cooldown
-
-Wird erst nach einer gewissen zeit Platziert.
-
-### Long Term
-
-<mark>Gibt es vordefinierte Plätze für diese art von spells?</mark>
-
-
-
-## Mana System
-
-Ein Kessel der sich langsam mit Mana füllt. Man kann die Spells eink
-
-## How to cast a spell

@@ -1,26 +1,28 @@
 # Literatur & Quellen & Zitate
 
-Wie gibt man gute Quellen an - https://www.bibsonomy.org/
+Wie gibt man gute Quellen an? - https://www.bibsonomy.org/
 
 ## Book research
 
 Book of lenses - [Die Kunst des Game Designs: Bessere Games konzipieren und entwickeln - Jesse Schell - Google Books](https://books.google.at/books/about/Die_Kunst_des_Game_Designs.html?id=HTD-DwAAQBAJ&printsec=frontcover&source=kp_read_button&hl=de&redir_esc=y#v=onepage&q&f=false)
 
-Rapid Prototyping - [Fail Fast, Fail Often: How Losing Can Help You Win](https://www.amazon.com/Fail-Fast-Often-Losing-Help/dp/0399166254)
+Rapid Prototyping - [Fail Fast, Fail Often: How Losing Can Help You Win - Ryan Babineaux, John Krumboltz - Google Books](https://books.google.at/books?id=pYzVQsehSrgC&printsec=frontcover&hl=de#v=onepage&q&f=false)
+
+MDA (p. 14 - p. 16) - [The Object Primer: Agile Model-Driven Development with UML 2.0 - Scott W. Ambler - Google Books](https://books.google.at/books?id=HL0gAwAAQBAJ&pg=PA14)
 
 ### Singleplayer vs. Multiplayer
 
 Asymmetrical Multiplayer Versus Single Player: Effects on Game Experience in Virtual Reality Edutainment Game - [Augmented Reality, Virtual Reality, and Computer Graphics: 7th International - Google Books](https://books.google.at/books?id=kCX6DwAAQBAJ&pg=PA22)
 
-### [Local Multiplayer](https://www.google.com/search?q=local+multiplayer&tbm=bks)
+### Local Multiplayer - [Google Books Search](https://www.google.com/search?q=local+multiplayer&tbm=bks)
 
 (Multiplayer Programming) - [Multiplayer Game Programming: Architecting Networked Games - Josh Glazer, Sanjay Madhav - Google Books](https://books.google.at/books?id=RKT-CgAAQBAJ&pg=PT25&dq=local+multiplayer&hl=de&sa=X&ved=2ahUKEwi8lYqdgMn6AhVOhf0HHQb5DZUQ6AF6BAgHEAI)
 
-### [What makes multiplayer games fun?](https://www.google.com/search?q=what+makes+multiplayer+gamesfun&tbm=bks)
+### What makes multiplayer games fun? - [Google Books Search](https://www.google.com/search?q=what+makes+multiplayer+gamesfun&tbm=bks)
 
-Paper - Wie macht erzeugt man spaß durch models - [ECGBL2015-9th European Conference on Games Based Learning: ECGBL2015 - Google Books](https://books.google.at/books?id=XQloCwAAQBAJ&pg=PA15)
+Paper - Wie erzeugt man Spaß mithilfe eines Modells - [ECGBL2015-9th European Conference on Games Based Learning: ECGBL2015 - Google Books](https://books.google.at/books?id=XQloCwAAQBAJ&pg=PA15)
 
-### [Asymmetrical Games](https://www.google.com/search?tbm=bks&q=asymmetrical+games)
+### Asymmetrical Games - [Google Books Search](https://www.google.com/search?tbm=bks&q=asymmetrical+games)
 
 - [Asymmetrical Concepts after Reinhart Koselleck: Historical Semantics and Beyond - Google Books](https://books.google.at/books?id=qY7JBAAAQBAJ&pg=PA34&dq=asymmetrical+games&hl=de&sa=X&ved=2ahUKEwjo7rDU_8j6AhWwhv0HHR00AccQ6AF6BAgKEAI)
 
@@ -30,6 +32,4 @@ Paper - Wie macht erzeugt man spaß durch models - [ECGBL2015-9th European Confe
 
 ## Other Media
 
-[VR/Console Gaming | JustPlayLah | Singapore Expo](https://m.facebook.com/story.php?story_fbid=170576774999903&id=101501701988602&eav=AfZQEDmCOJSXI9fg2GsBAtvvIltdiydKmDF-B-Gask10Y8XxSUDXY8BFUvWm6P_oIbM&paipv=0&_rdr)
-
-
+Facebook  VRxCouchparty-Games - [VR/Console Gaming | JustPlayLah | Singapore Expo](https://m.facebook.com/story.php?story_fbid=170576774999903&id=101501701988602&eav=AfZQEDmCOJSXI9fg2GsBAtvvIltdiydKmDF-B-Gask10Y8XxSUDXY8BFUvWm6P_oIbM&paipv=0&_rdr)

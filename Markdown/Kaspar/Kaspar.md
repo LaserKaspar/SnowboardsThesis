@@ -36,6 +36,8 @@ Asymmetrical VR (Definition + Beispiele)
 
 4. Reiko's Fragments
 
+5. [Asymmetric VR - Steam](https://www.reddit.com/r/vive_vr/comments/kg5rxa/what_is_the_best_asymmetrical_vr_game_at_the/)
+
 Couchparty (Definition + Beispiele)
 
 1. Overcooked
@@ -54,7 +56,7 @@ Asymmetrical & Couchparty VR-Games (Definition + Beispiele)
 
 2. Takelings - House party
 
-3. Davigo / Dani Game   
+3. Davigo / Dani Game
 
 #### Was haben diese Spiele gemeinsam?
 
@@ -78,4 +80,4 @@ Das hat (nicht) funktioniert.
 
 Welche Ideen mussten verworfen werden.
 
-Was würde ich ändern, wenn ich weiterarbeiten würde
+Was würde ich ändern, wenn ich weiterarbeiten würde?
