@@ -12,11 +12,7 @@ Die PC-Spieler sollen zu einer Einheit werden.
 
 ### Fast & Strategic
 
-Der VR-Spieler kann Sachen im Vorhinein planen und platzieren, da er sich in einem bestimmten Bereich frei auf der Strecke bewegen kann.
-
-
-
-
+Der VR-Spieler kann Aktionen/Spells im planen und vorrauschauend platzieren.
 
 ## Leveldesign
 
@@ -26,7 +22,7 @@ Der VR-Spieler kann Sachen im Vorhinein planen und platzieren, da er sich in ein
 
 - Er muss gute combos machen können.
 
-- Durch die Revive funktion müssen die Spieler miteinander kommunizieren
+- Durch die Revive-Mechanic müssen die Spieler miteinander kommunizieren.
 
 - Planung wird durch das Mana-System enforced.
 

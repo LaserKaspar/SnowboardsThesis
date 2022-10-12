@@ -2,7 +2,9 @@
 
 Jede Strecke muss linear sein, damit die Spieler nahe beeinander bleiben.
 
-## <mark>motion sickness</mark>
+## Motionsickness
+
+"Als Motion Sickness bezeichnet man ein Zustand, in dem eine Unstimmigkeit zwischen visuell wahrgenommener Bewegung und dem Bewegungssinn des Gleichgewichtssystems besteht." - Google
 
 # Streckendesigns
 
@@ -33,3 +35,17 @@ Um dem VR-Spieler aber trodzdem nicht in der Auswahl seiner Spells beschränken 
 #### Verschiebbare Obstacles
 
 Um den Spielern etwas mehr diversität auf einer einzigen Strecke bieten zu können, kann der VR-Spieler bereiche der Strecke aus und einschalten. Das kann aufgrund der Reaktionszeit der PC-Spieler allerdings nur dann möglich sein, wenn die spieler noch weit genug davon entfernt sein. Damit die Strecke Lienear bleibt, kann der VR-Spieler den Verlauf der Strecke nur verändern, indem er Blockaden der Strecken verschiebt.
+
+### Schluchten
+
+Der VR-Spieler hat die Möglichkeit Wege einstürzen zu lassen. Die eingestürtzten Teile dürfen nicht größer als einen Sprung sein damit die Spieler noch eine Chance haben.
+
+## Kurven vs. Geraden
+
+<mark>Hier fehlt noch was</mark>
+
+## Quick Topdown View
+
+
+
+<img title="" src="sketches/strecke_topdown.png" alt="Kiku" width="241">
