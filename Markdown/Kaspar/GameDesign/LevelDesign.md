@@ -40,12 +40,12 @@ Um den Spielern etwas mehr diversität auf einer einzigen Strecke bieten zu kön
 
 Der VR-Spieler hat die Möglichkeit Wege einstürzen zu lassen. Die eingestürtzten Teile dürfen nicht größer als einen Sprung sein damit die Spieler noch eine Chance haben.
 
+Diese Wege stürtzen auch nicht sofort ein. Sie haben eine Animation, die die Spieler darauf vorbereitet, damit sie noch reagieren können.
+
 ## Kurven vs. Geraden
 
-<mark>Hier fehlt noch was</mark>
+Die PC-Spieler werden so umgesetzt, dass sie grundsätzlich von alleine bergab fahren können. Eine permanente links kurve bedeutet also nicht, dass der PC-Spieler permanent nach links lenken muss. Jedoch wird es mit der Zeit sehr langweilig die Ganze zeit in eine Richtung fahren zu müssen. Daher wird die Map aus vielen Kurven bestehen, die Ecken und Kanten davon bieten gute Möglichkeiten Long-Term-Spells zu plazieren da sie da die grrößte fäche abdecken.
 
 ## Quick Topdown View
-
-
 
 <img title="" src="sketches/strecke_topdown.png" alt="Kiku" width="241">

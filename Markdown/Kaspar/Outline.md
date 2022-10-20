@@ -14,6 +14,7 @@ Design eines asymmetrischen Local-Multiplayer-Party-Games unter Verwendung des M
       1. Was ist das MDA-Framework
       2. Was ist Player-Action-Feedback
       3. Was ist eine Target-Experience
+      4. Target Dynamics
 
 3. Stand der Industrie / Wie funktionieren ähnliche Spiele?
    

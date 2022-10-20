@@ -29,3 +29,9 @@ Der VR-Spieler kann Aktionen/Spells im planen und vorrauschauend platzieren.
 ### Was macht eine Strecke gut?
 
 Eine Strecke muss replay-Wert haben. Das kann dadurch erreicht werden, dass der VR-Spieler die Strecke verändern kann.
+
+### Revive Mechanic / Krone
+
+Wenn einer der PC-Spieler weiter vorne ist bekommt er eine Krone. Wenn diese Krone für eine gewisse Zeit von dem gleichen Spieler gehalten wird, wird eier der ausgeschiedenen Snowboarder wieder ins Spiel zurück geholt.
+
+Die Krone kann nur ein mal von einem Spieler verwendet werden, danach muss sie jemand anderes halten um zu reviven.

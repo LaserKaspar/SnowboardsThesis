@@ -4,40 +4,53 @@
 
 ## Speed
 
-<mark>Ist das was gutes?</mark>
+<mark>Ist das was gutes für die Spieler?</mark>
+
+<mark>Wird es auf alle gleichzeitig angewandt?</mark>
 
 ## Jumpads
 
-<mark>Spieler bekommt doppelsprung</mark>
+<mark>Bekommt der Spieler einen Doppelsprung oder Springt er automatisch</mark>
 
-## Health
+## ~~Health (Verworfen)~~
 
-## Instant revive?
+~~Haben unsere Spieler überhaupt leben? Nein~~
+
+## Instant revive
+
+Bringt sofort einen ausgeschiedenen Spieler wieder ins rennen.
+
+<mark>Kann es aufgehoben werden, wenn alle Spieler am leben sind?</mark>
 
 # Spells (VR Interactables)
 
+## Mana System
+
+Ein Kessel der sich langsam mit Mana füllt. Man kann die Spells in den Kessel eintunken um sie zu aktivieren. Wenn man sie loslässt, werden die Spells wieder deaktiviert. Es gibt halterungen die die Spells aufrecht erhalten.
+
+Balancing Opportunity:
+
+Um so mehr Spieler auf der Map sind, desto mehr Mana bekommt der VR-Spieler, das macht das es schwerer für den VR-Spieler, sollte er zu gut sein. Außerdem unterstützt es combos.
+
+Am Berg sind Maschienen befestigt, welche der VR-Spieler genauer Steuern kann. Diese verbrauchen (wenn man sie verwendet) dauerhaft Mana, bis alles mana aufgebraucht ist.
+
+z.B. Hammer (An manaystem angeschlossen)
+
 ## The 3 Spell-Types
 
-<mark>Gibt es Spells die nach einer gewissen Zeit wieder zerstört werden?</mark>
-<mark>Kann man Spells kombinieren?</mark>
-
-Maschienen die am Berg befestigt sind die man mit vr interaktion steuern kann?
-
-z.B. Hammer?
+Kann man Spells kombinieren/craften? Nein
 
 ### Instant
 
-~~Kann nicht direkt auf den Spielern platziert werden. Muss Strathegisch platziert werden.~~
+~~(Spell-Typ wurden schwächer gemacht und diese Idee verworfen) |-Kann nicht direkt auf den Spielern platziert werden. Muss Strathegisch platziert werden.~~
 
-größerer Wirkungsradius, Flächeneffekte
+Sie haben einen größerer Wirkungsradius/Flächeneffekte. Sie dürfen den Spieler nie sofort töten, da sie direkt in den Spielern platziert werden können.
 
 z.B. Regen / Hagel, Splash (Bodeneigenschaften), Jelly, mikado schachtel die man schütteln kann
 
 ### Cooldown
 
-Wird erst nach einer gewissen Zeit platziert.
-
-<mark>Kann man den cooldown der spells verändern?</mark>
+Wird erst nach einer gewissen Zeit platziert. Sie haben auch eine vordefinierte Lebensdauer, nach der sie zerstört werden. Fürs erste kein veränderbarer cooldown bei den Spells.
 
 z.B. Rampen, Barikaden, Jumppads?, Schluchten?, Bomben
 
@@ -45,16 +58,14 @@ z.B. Rampen, Barikaden, Jumppads?, Schluchten?, Bomben
 
 Es gibt vordefinierte Plätze für diese Art von Spells. Dadurch kann man sie nicht auf einen Abschnitt der Strecke spammen.
 
+Man kann sie danach nicht mehr verschieben allerdings kann man sie zerstören, und man bekommt einen kleinen Teil der Mana zurück.
+
 z.B. Schneemänner
 
 ### Map
 
-Dinge die man auf der Map verändern kann.
+Dinge die man auf der Map verändern kann. (Siehe [LevelDesign#Schluchten](LevelDesign.md#Schluchten))
 
-z.B. Pfad absperren
-
-## Mana System
-
-Ein Kessel der sich langsam mit Mana füllt. Man kann die Spells in den Kessel eintunken um sie zu aktivieren. Wenn man sie loslässt, werden die Spells wieder deaktiviert. Es gibt halterungen die die Spells aufrecht erhalten.
+z.B. Pfad absperren, Schluchten einstürzen lassen
 
 ## How to cast a spell
