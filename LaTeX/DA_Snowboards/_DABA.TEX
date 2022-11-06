@@ -1,0 +1,94 @@
+\documentclass[diplom,german]{hgbthesis}
+% Zulässige Class Options: 
+%   Typ der Arbeit: diplom, master (default), bachelor, praktikum 
+%   Hauptsprache: german (default), english
+%%------------------------------------------------------------
+
+
+% Zusatzpakete (bei Bedarf einkommentieren):
+% \usepackage{enumitem}    % erlaubt Listen mit einem <key>=<value> - Format
+% \usepackage{tikz}        % ermöglicht das Zeichnen von Grafik-Elementen (zB Linien, Kreise etc.) - Bsp.: https://www.overleaf.com/learn/latex/TikZ_package
+% \usetikzlibrary{arrows,shapes,positioning} % Zusatzbibliothek für tikz (zB Pfeil etc.)
+\usepackage{pdfpages}      % ermöglicht das includieren (mit \include) von pdf-Dateien
+
+\graphicspath{{images/}}   % Verzeichnis mit den Bildern (zB für \figure)
+%\logofile{spengerlogo_cmyk_small}   % Name des .pdf mit dem Logo
+
+\bibliography{literatur}   % Datei(en) mit der Bibliothek (.bib) für das Quellenverzeichnis 
+% Beispiel für mehrere .bib files: \bibliography{schueler1/literatur,schueler2/literatur}
+
+%%%----------------------------------------------------------
+\begin{document}
+%%%----------------------------------------------------------
+
+% offizielle Formulare inkludieren
+%\includepdf[page=-]{formulare/HTL_RDP_Titelseite_DA_A4}
+%\includepdf[page=-]{formulare/HTL_RDP_Dokumentation_DA_DE_A4}
+%\includepdf[page=-]{formulare/HTL_RDP_Dokumentation_DA_EN_A4}
+
+%\begin{minipage}{\textwidth}
+%	\includepdf[scale=0.85,pages=1]{formulare/HTL_RDP_Titelseite_DA_A4}
+%\end{minipage}
+
+% Daten zur Arbeit: _________--------------------------------
+\title{"'Tricks 'n' Treats"': Entwicklung eines asymmetrischen VR- und Couch-Partyspiels}
+\author{Ian Memic, Simon Buketits, Emma Wehinger und Felix Kaspar}
+\studiengang{Mediendesign - Gamedesign}
+\studienort{Wien}
+\abgabedatum{2021}{04}{05}	% {YYYY}{MM}{DD}
+
+%%%----------------------------------------------------------
+\frontmatter
+\maketitle
+\tableofcontents
+%%%----------------------------------------------------------
+
+%\include{vorwort}		% ggfs. weglassen
+\include{kurzfassung}   % vom Team gemeinsam zu verfassen
+\include{abstract}		% vom Team gemeinsam in englisch zu verfassen	
+
+%%%----------------------------------------------------------
+\mainmatter         % Hauptteil (ab hier arab. Seitenzahlen)
+%%%----------------------------------------------------------
+
+% Trennseite erzeugt ein Titelblatt für eine neue Arbeit (zB wenn die Arbeit A endet und die Arbeit B beginnt)
+% Parameter: {}Titel der Arbeit}{Autor}{Betreuer}{Abteilung}
+% Beispiele: 
+%	\trennseite{Gestaltpsychologie und stilisiertes Game Audio}{Noah Diem}{Dipl.Ing. Michael Schreiber}{Mediendesign - Gamedesign}
+%	\trennseite{Collection and analysis of gameplay metrics}{Ian Hornik}{Mag. Andreas Metz}{Media design - Game design}
+
+\trennseite{Design eines asymmetrischen local-multiplayer partygames unter Verwendung des MDA-Frameworks.}{Felix Kaspar}{Titel + René Ksuz}{Mediendesign - Gamedesign}
+\include {kaspar/vorhaben}
+
+% falls es englische Arbeiten gibt, können englische Bereiche der Arbeit mit \begin{english} und \end{english} umschlossen werden.
+%\begin{english}
+%\trennseite{Collection and analysis of gameplay metrics}{Ian Hornik}{Mag. Andreas Metz}{Media design - Game design}
+%\include{hornik/hornik}
+%\end{english}
+
+%\trennseite{Titel der Arbeit B}{SchuelerIn B}{Titel + Name Betreuer von Arbeit B}{Mediendesign - Gamedesign}
+%\include {schueler_b/einleitung}
+%\include {schueler_b/abbildungen}
+%\include {schueler_b/prozessoren}
+
+%%%----------------------------------------------------------
+%%%Anhang
+\appendix
+\include{anhang_projektdokumentation}	    % Projektdokumentation
+\include{anhang_kooperationsvereinbarung}	% Kooperationsvereinbarung
+\include{anhang_datentraeger}	            % Inhalt des Datenträgers
+
+%%%----------------------------------------------------------
+\MakeBibliography
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\listoftables
+
+
+%%%----------------------------------------------------------
+
+%%%Messbox zur Druckkontrolle
+\include{messbox}
+
+\end{document}
