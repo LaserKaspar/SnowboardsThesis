@@ -18,11 +18,13 @@ VR meets Couchparty
 
 Warum machen Spiele Spaß?
 
-MDA-Framework
+Game Design
 
-Player Action Feedback
+    MDA-Framework
 
-Target Experience
+    Player Action Feedback
+
+    Target Experience
 
 #### Stand der Industrie
 
