@@ -1,0 +1,65 @@
+\chapter{Überblick über die Materie}
+
+Lore Imposum
+
+\section{Allgemeine Performance Optimierung}
+
+\subsection{Mesh Basics}
+
+Als Mesh oder auch Mesh Objekt bezeichnet man dreidimensionale Objekte, welche vom Computer dargestellt wird. Fachlich spricht man hier von einem Polygonnetz, welches aus Punkten und den damit verbunden Kanten besteht. Das Polygonnetz besteht aus einzelnen miteinander verbundenen Polygonen oder auch Vielecken genannt. Das Polygon bildet sich durch den geschlossenen Streckenzug zwischen den einzelnen Punkten (Polytopen). Ein Polygon muss mindestens 3 Punkte besitzen, um gebildet werden zu können. Ein Polygon mit 3 Punkten bildet somit ein Dreieck. Somit spricht man beim Mesh von der Geometrie eines Objektes. Jedes Mesh besteht aus 3 wichtigen Komponenten:
+\begin{enumerate}[]
+	\item Vertex (Mehrzahl Vertices): bezeichnet einen einzelnen Punkt
+	\item Edge: verbindet 2 Punkte und bildet damit eine Linie/Kante
+	\item Face (Polygon): besteht aus mindestens 3 verbunden Edges die eine Fläche bilden
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{polygone}
+	\caption{\cite{_polygons}}
+\end{figure}
+
+\subsection{Was ist ein Vertex}
+
+Wie schon bereits erwähnt ist ein einzelner Punkt. Genauer ist ein Vertex ein essentiell dargestellter Punkt in der Geometry. Das bedeutet ein Vertex kann ein Eckpunkt, Mittelpunkt, oder Brennpunkt sein. Da Vertices der Grundbaustein der Computergrafik sind sie unvermeidlich. Sie werden mittels dreidimensionalen Vektors ausgegeben, womit seine Position genau mit seinen homogenen Koordinaten angegeben werden kann.
+
+\subsection{Faces - Quads vs. Tris}
+
+Es wurden bereits die allgemeinen Eigenschaften eines Faces bestimmt. Faces müssen mindestens 3 miteinander verbundene Kanten und damit auch 3 Vertices besitzen um die simpelste geometrische Form, das Dreieck zu bilden. Dreiecke werden in der Computer Grafik auch als Tris (Singular Tri) bezeichnet. Die nächsthöhere geometrische Form ist das Viereck oder auch Quad. Quads bestehen aus zwei Tris. Quads und Tris sind die zwei wichtigsten Polygone in der Computer Grafik und sind essentiell zum 3D-Modellieren und damit auch für 3D Game-Development.
+
+Professionelle Videospiel-Entwickler halten sich strikt daran nur diese zwei Polygonarten zum 3D – Modellieren zu verwenden. Dabei anstand die interne Diskussion, ob sich Tris oder Quads besser eignen.
+
+Es ist wichtig zu erwähnen, dass nachdem ein Mesh Objekt fertiggestellt wurde und in ein Game – Engine importiert, wird jegliche Geometrie in Dreiecke konvertiert wird. Dies liegt daran, dass Dreiecke einfach sind mittels Computer zu zeichnen, wodurch sie schneller berechnet und nicht simpler aufgeteilt werden können. Die weitaus wichtigste Eigenschaft ist, dass Dreiecke immer planar sind. Alle größeren geometrischen Formen hingegen können weiter aufgeteilt werden und da nicht alle Vertices planar sein müssen wird die Grafikkarte mehr berechnen müssen. Daher eignen sich Dreiecke weitaus mehr als andere Polygone.
+
+Dies bezieht sich jedoch nur auf die Game-Engine. Während des Modellierens eignet sich ein Quad basierender Workflow um einiges mehr. Programme wie Autodesk Maya und Blender ermöglichen mit diesem Workflow einige Features, welche mit anderer Geometry weitaus schwieriger ein effektives Resultat zu erzielen. Der Grund dafür ist das eine effiziente Topologie mit Quads effektiver und schneller erreicht wird. Anders als Quads würden bei Dreiecken ein großer längenunterschied zwischen den Seiten entstehen, welcher einer guten Topologie schadet. Weiters eignet sich bei animiertem Objekt der Quad-Workflow da die Edges simpel geradlinig sind und damit bei der Animation einen organischen Verlauf besitzen.
+
+\section{Allgemeine Performance Optimierung}
+
+\subsection{Low-Poly Grafik}
+
+Als Lowpoly bezeichnet man eine grafische Stilrichtung, welche sich aus Notwendigkeit der damaligen Computer Grafischen Begrenzungen entwickelt hat. Ursprünglich versteht man unter Lowpoly eine Modeling-Methode, ein Objekt mit der möglichst kleinen Anzahl an Polygonen darzustellen. Vergleichsweise zu heute, gab viel mehr grafische Einschränkung mit dem Anfang von 2D und 3D Videospielen. Als „Quake“ 1993 als eines der ersten wirklichen 3D-Spiele veröffentlicht wurde, galt es als ein technischer Meilenstein in der Computergrafik. Rückblickend lässt sich leicht feststellen, dass die revolutionären Grafiken veraltet sind. Die damaligen Computer konnten nur einen Bruchteil unserer heuten Rechenleistung anwenden, wodurch grafische Einschränkung notwendig war. Als Lösung mussten alle 3D Objekt mit möglichst kleinsten Punkteanzahl dargestellt werden und sehr simplen Texturen. Darauf folgt, das damalige Objekte sehr eckig erscheinen.
+
+
+\begin{figure}[h]
+	\centerfirst
+	\includegraphics[width=10cm]{HighLow}
+	\caption{Blender Affe}
+\end{figure}
+
+
+Spiele und Animationsfilme arbeiteten beide mit dieser Methode, jedoch gelang es im Animationsbereich schneller zu einem Durchbruch und es konnten Rechenintensivere 3D-Modelle verwendet werden. Grund dafür, war der essenzielle im Rendering der beiden Medien. Animationsfilme konnten in einer langen Sequenz berechnet und hergestellt werden. Spiele sind jedoch interaktiv und müssen daher Echtzeit berechnet werden, wodurch ein großer Teil der Rechenleistung beansprucht wird.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{Mario}
+	\caption{\cite{_mario}}
+\end{figure}
+
+Mit der Entwicklung von Grafikkarten verbesserte sich die Rechenleistung womit detaillierte Meshes kein Hindernis mehr darstellten. Der Low-Poly-Stil wird nun als eine künstlerische Stilrichtung genutzt und verleiht neuen Spielen ein nostalgisches Gefühl. Die Wiederbelebung des Stiles gelang vor allem durch sein Anfängerfreundlichkeit für neue Designer und Designerinnen. 
+
+\subsection{Stilisierte Grafik}
+
+„Visually, hand painted texturing often mimics a traditional digital painting, where you can see all the brush strokes as if it was hand painted, often featuring a more stylized, cartoony look. It mimics a traditional digital painting so well that when the camera is static or if it is a render, it is often hard to tell if it is a 3D model or a 2D illustration. PBR texturing is often used to emulate a very realistic look, as close to real-life as possible.“	\cite{_stylisedArt}
+
+
+
