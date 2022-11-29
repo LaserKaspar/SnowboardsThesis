@@ -18,4 +18,10 @@
 
 [Introduction to the Theory of Cooperative Games - Bezalel Peleg, Peter Sudhölter - Google Books](https://books.google.at/books?hl=de&lr=&id=9N8BJ6rwTcwC&oi=fnd&pg=PR5&dq=cooperative+games&ots=j__mDB-v0c&sig=I4Jz-ZgrQ1I0bHfS86_7uB2F9wE&redir_esc=y#v=onepage&q=cooperative%20games&f=false)
 
+### Interaction in VR games
+
+[Interaction Fidelity: The Uncanny Valley of Virtual Reality Interactions | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-319-39907-2_6)
+
+Removeing hands for better accesibility - [Natural Interaction in Virtual Reality for Cultural Heritage | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-030-05819-7_10)
+
 .
