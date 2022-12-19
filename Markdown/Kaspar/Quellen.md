@@ -24,4 +24,8 @@
 
 Removeing hands for better accesibility - [Natural Interaction in Virtual Reality for Cultural Heritage | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-030-05819-7_10)
 
+Controller vs Handtracking - [Natural interaction in virtual reality | Adjunct Proceedings of the 31st Conference on l'Interaction Homme-Machine](https://dl.acm.org/doi/abs/10.1145/3366551.3370342)
+
+Natural User Interfaces - http://www.image.ece.ntua.gr/papers/959.pdf
+
 .

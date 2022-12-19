@@ -14,6 +14,18 @@ Die PC-Spieler sollen zu einer Einheit werden.
 
 Der VR-Spieler kann Aktionen/Spells im planen und vorrauschauend platzieren.
 
+
+
+## Experiences
+
+### VR
+
+Multitasking + Kraft
+
+### PC
+
+Snowboarding + Action
+
 ## Leveldesign
 
 ### Welche LevelDesign Entscheidungen würden unsere Core-Experience unterstützen?

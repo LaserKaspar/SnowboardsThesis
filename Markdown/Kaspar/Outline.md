@@ -33,16 +33,14 @@ Design eines asymmetrischen Local-Multiplayer-Party-Games unter Verwendung des M
    1. Wie fördert man Interaktionen zwischen zwei von einander abgeschotteten Spielern/Teams.
    2. Wie beeinflusst man Kooperation innerhalb eines Teams.
 
-6. Das Konzept (von unserem Spiel)
+6. Implementation
    
-   1. Was mus bei VR-Game-Design beachtet werden?
+   1. Konzept (von unserem Spiel)
+   2. Was muss bei VR-Game-Design beachtet werden?
+   3. Was ist unsere Target-Experience?
+   4. Target Experience vs Playtests
 
-7. Implementation
-   
-   1. Was ist unsere Target-Experience?
-   2. Target Experience vs Playtests
-
-8. Post Mortem
+7. Post Mortem
    
    1. Weiterentwicklung
    
