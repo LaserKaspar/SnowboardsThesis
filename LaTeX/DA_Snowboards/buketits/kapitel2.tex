@@ -2,6 +2,12 @@
 \section{Level Of Detail}
 Der Begriff LOD (Level of Detail) bezieht sich auf die Komplexität der 3D Darstellung eines 3D-Models. Das LOD kann mit der Distanz vom Betrachter oder nach Wichtigkeit des Objektes verringert oder erhöht werden. LOD kann die Geschwindigkeit und Effizienz des Renderings erhöhen, indem die Arbeitslast in der Grafikpipeline verringert wird. Diese Performance-Verbesserung wird dadurch erhalten, dass z.B. weniger Vertices gerendert werden müssen. Die verringerte visuelle Qualität ist oft nicht bemerkbar, da Objekte sich dann in erhöhter Distanz befinden oder sich schnell bewegen. LOD wird meistens nur auf Geometriedetails angewendet, jedoch kann dieses Konzept auch anders angewendet werden. Theoretisch kann man auch Shader und Pixelkomplexität basierend auf diesen Parametern abändern. Das sogenannte Mipmapping, welches seit einigen Jahren existiert, kann ebenfalls eine höhere Renderingqualität bieten.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=11cm]{images/buketits_lod}
+	\caption{\cite{_lod_formeshes}}
+\end{figure}
+
 
 \section{Culling}
 Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren von Objekten jeglicher Art (Objekte, Zeichenaufrufe, Dreiecke und Pixel), die nicht zum endgültigen Bild beitragen. Es gibt viele Techniken, die Objekte in verschiedenen Stadien der Rendering-Pipeline aussortieren. Einige dieser Techniken werden vollständig in Software auf der CPU ausgeführt, andere werden von der Hardware (GPU) unterstützt und wieder andere sind in die Grafikkarte integriert. Es ist hilfreich, alle diese Techniken zu verstehen, um eine gute Leistung zu erzielen. Um so viel Verarbeitungsarbeit wie möglich zu vermeiden, ist es besser, frühzeitig und in größerem Umfang zu cullen. Andererseits sollte das Culling selbst nicht zu viel Leistung und Speicherplatz kosten. Um eine gute Leistung zu gewährleisten, gleichen wir das System automatisch aus. Dies führt zu einer besseren Leistung, macht die Systemeigenschaften aber auch etwas schwieriger zu verstehen.
