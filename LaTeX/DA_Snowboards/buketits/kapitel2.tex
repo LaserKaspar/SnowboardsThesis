@@ -1,18 +1,24 @@
 \chapter{Mögliche Performance Optimierungen}
 \section{Level Of Detail}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+Der Begriff LOD (Level of Detail) bezieht sich auf die Komplexität der 3D Darstellung eines 3D-Models. Das LOD kann mit der Distanz vom Betrachter oder nach Wichtigkeit des Objektes verringert oder erhöht werden. LOD kann die Geschwindigkeit und Effizienz des Renderings erhöhen, indem die Arbeitslast in der Grafikpipeline verringert wird. Diese Performance-Verbesserung wird dadurch erhalten, dass z.B. weniger Vertices gerendert werden müssen. Die verringerte visuelle Qualität ist oft nicht bemerkbar, da Objekte sich dann in erhöhter Distanz befinden oder sich schnell bewegen. LOD wird meistens nur auf Geometriedetails angewendet, jedoch kann dieses Konzept auch anders angewendet werden. Theoretisch kann man auch Shader und Pixelkomplexität basierend auf diesen Parametern abändern. Das sogenannte Mipmapping, welches seit einigen Jahren existiert, kann ebenfalls eine höhere Renderingqualität bieten.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=11cm]{images/buketits_lod}
+	\caption{\cite{_lod_formeshes}}
+\end{figure}
 
 
 \section{Culling}
+Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren von Objekten jeglicher Art (Objekte, Zeichenaufrufe, Dreiecke und Pixel), die nicht zum endgültigen Bild beitragen. Es gibt viele Techniken, die Objekte in verschiedenen Stadien der Rendering-Pipeline aussortieren. Einige dieser Techniken werden vollständig in Software auf der CPU ausgeführt, andere werden von der Hardware (GPU) unterstützt und wieder andere sind in die Grafikkarte integriert. Es ist hilfreich, alle diese Techniken zu verstehen, um eine gute Leistung zu erzielen. Um so viel Verarbeitungsarbeit wie möglich zu vermeiden, ist es besser, frühzeitig und in größerem Umfang zu cullen. Andererseits sollte das Culling selbst nicht zu viel Leistung und Speicherplatz kosten. Um eine gute Leistung zu gewährleisten, gleichen wir das System automatisch aus. Dies führt zu einer besseren Leistung, macht die Systemeigenschaften aber auch etwas schwieriger zu verstehen.
+
+Normalerweise erfolgt das Culling der Engine auf der Ebene des Ziehungsaufrufs oder bei mehreren Ziehungsaufrufen. Wir gehen nicht bis auf die Ebene der Dreiecke oder noch weiter runter, da dies oft nicht effizient ist. Das bedeutet, dass es sinnvoll sein kann, große Objekte in mehrere Teile aufzuteilen, so dass nicht alle Teile zusammen gerendert werden müssen.
+\cite{_cryengine_culling}
+
+\subsection{frustrum culling}
+
+
+\section{Draw call batching}
 Dieses Dokument ist als vorwiegend technische Starthilfe für das
 Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
 gedacht und ist die Weiterentwicklung einer früheren
@@ -23,19 +29,7 @@ klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
 mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
 kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
 nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
-
-
-\section{Batching}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+\cite{_drawcallbatching}
 
 \section{Object Pooling}
 Dieses Dokument ist als vorwiegend technische Starthilfe für das
@@ -48,6 +42,7 @@ klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
 mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
 kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
 nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+\cite{_objectpooling}
 
 \section{Multithreading}
 Dieses Dokument ist als vorwiegend technische Starthilfe für das

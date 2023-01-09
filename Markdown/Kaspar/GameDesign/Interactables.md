@@ -69,3 +69,31 @@ Dinge die man auf der Map verändern kann. (Siehe [LevelDesign#Schluchten](Level
 z.B. Pfad absperren, Schluchten einstürzen lassen
 
 ## How to cast a spell
+
+### Activate with button
+
+Activate a spell when pressing a button on the controller
+
+### Activate with force
+
+Activate a spell when it is slammed on the track
+
+## Hot to get a spell
+
+### Button
+
+Press a button to drop a spell 
+
+### Hover
+
+Drop spell on hover
+
+## Spell Orb Desings
+
+### Ball
+
+### Form
+
+## Juice
+
+.
