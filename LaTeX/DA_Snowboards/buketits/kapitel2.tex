@@ -15,46 +15,20 @@ Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren v
 Normalerweise erfolgt das Culling der Engine auf der Ebene des Ziehungsaufrufs oder bei mehreren Ziehungsaufrufen. Wir gehen nicht bis auf die Ebene der Dreiecke oder noch weiter runter, da dies oft nicht effizient ist. Das bedeutet, dass es sinnvoll sein kann, große Objekte in mehrere Teile aufzuteilen, so dass nicht alle Teile zusammen gerendert werden müssen.
 \cite{_cryengine_culling}
 
-\subsection{frustrum culling}
+\subsection{Frustum Culling}
+\cite{_cryengine_culling}
+
+\subsection{Backface Culling}
+\cite{_cryengine_culling}
 
 
 \section{Draw call batching}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+Die Unity-Engine stapelt draw calls von mehreren GameObjects, welche das gleiche Material verwenden. Somit wird die Anzahl der draw calls reduziert und die Last auf der Grafikkarte verringert. Die besten Ergebnisse können erzielt werden, indem das Selbe Material auf möglichst viele Objekte angewandt wird. Um diese Technik anzuwenden muss man jedoch auf ein paar Regulierungen achten. Mesh Renderer, Trail Renderer, Line Renderer, Particle Systems und Sprite Renderer unterstützen draw call batching. Andere rendering components unterstützen diese Technik nicht. Abgesehen davon, muss die rendering component die selbe sein. Das heißt, dass z.B. Mesh Renderer und Trail Renderer nicht gebatcht werden. Sollte man mehrere Materialien verwenden, ist es auch möglich die gleiche Textur zu einzusetzen und damit Performance zu sparen. Dieser Vorgang heißt texture atlasing.
 \cite{_drawcallbatching}
 
 \section{Object Pooling}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+Wenn GameObjects schnell erstellt und gelöscht werden müssen, ist Object Pooling ist eine gute Technik, um Projekte zu optimieren und die CPU-Last zu verringern. Object Pooling ist ein Design-Pattern, bei welchem die benötigten Objekte bereits vor dem Start des Spiels erstellt und in ein „Zwischenlager“ geschoben werden. Bei Anwendung werden diese dann aus dem Lager geholt und anstatt diese Objekte nach Gebrauch zu zerstören, werden diese dann wieder ins Lager verschoben. Bei manchen Anwendungsfällen erhöht Object Pooling die Performance erheblich. Ein gutes Beispiel wären z.B. Projektile in einem Top-Down-Shooter.
 \cite{_objectpooling}
-
-\section{Multithreading}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
 
 \section{Coroutines vs Update}
 Dieses Dokument ist als vorwiegend technische Starthilfe für das
