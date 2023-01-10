@@ -10,15 +10,26 @@ Der Begriff LOD (Level of Detail) bezieht sich auf die Komplexität der 3D Darst
 
 
 \section{Culling}
-Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren von Objekten jeglicher Art (Objekte, Zeichenaufrufe, Dreiecke und Pixel), die nicht zum endgültigen Bild beitragen. Es gibt viele Techniken, die Objekte in verschiedenen Stadien der Rendering-Pipeline aussortieren. Einige dieser Techniken werden vollständig in Software auf der CPU ausgeführt, andere werden von der Hardware (GPU) unterstützt und wieder andere sind in die Grafikkarte integriert. Es ist hilfreich, alle diese Techniken zu verstehen, um eine gute Leistung zu erzielen. Um so viel Verarbeitungsarbeit wie möglich zu vermeiden, ist es besser, frühzeitig und in größerem Umfang zu cullen. Andererseits sollte das Culling selbst nicht zu viel Leistung und Speicherplatz kosten. Um eine gute Leistung zu gewährleisten, gleichen wir das System automatisch aus. Dies führt zu einer besseren Leistung, macht die Systemeigenschaften aber auch etwas schwieriger zu verstehen.
-
-Normalerweise erfolgt das Culling der Engine auf der Ebene des Ziehungsaufrufs oder bei mehreren Ziehungsaufrufen. Wir gehen nicht bis auf die Ebene der Dreiecke oder noch weiter runter, da dies oft nicht effizient ist. Das bedeutet, dass es sinnvoll sein kann, große Objekte in mehrere Teile aufzuteilen, so dass nicht alle Teile zusammen gerendert werden müssen.
+Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren von Objekten jeglicher Art, welche nicht zum endgültigen Bild beitragen. Es gibt viele Techniken, die Objekte in verschiedenen Bereichen der Rendering-Pipeline aus zu sortieren. Einige dieser Techniken werden vollständig in Software auf der CPU ausgeführt, andere werden von der Hardware (GPU) unterstützt und wieder andere sind in die Grafikkarte integriert. Es ist hilfreich, alle diese Techniken zu verstehen, um eine gute Leistung zu erzielen. Um viel Rechenkraft zu sparen, ist es wichtig, frühzeitig und in größerem Umfang zu cullen. Wichtig ist auch, dass das Culling an sich, selbst nicht zu viel Leistung und Speicherplatz kostet.
+Normalerweise erfolgt das Culling der Engine auf der Draw Call Ebene. Beim Culling werden nicht die einzelnen Triangles gecullt, sondern ganze Objekte. Das bedeutet, dass es sinnvoll sein kann, große Objekte in mehrere Teile aufzuteilen, so dass nicht alle Teile zusammen gerendert werden.
 \cite{_cryengine_culling}
 
 \subsection{Frustum Culling}
+Frustrum culling ist eine wichtige Technik, welche in so gut wie jeder ernstzunehmenden Engine vorhanden ist. Die Grundlage des Frustrum cullings ist, Objekte, welche sich nicht in der view frustrum pyramid befinden (also nicht gesehen werden und keinen Einfluss auf das endgültige Bild haben) nicht zu rendern und somit Rechenleistung zu sparen.
 \cite{_cryengine_culling}
 
+\subsection{Occlusion Culling}
+Occlusion culling überprüft ob Objekte oder auch triangles von anderen verdeckt werden und rendert diese dann nicht. Diese Technik ist besonders bei Szenen mit hoher Tiefenkomplexität äußerst wichtig und kann zu erheblichen Performance Einsparungen führen.
+\cite{_cryengine_culling}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{images/buketits_frustrum}
+	\caption{Zeigt view frustrum pyramid 1.ohne Culling, 2.mit frustrum culling, 3.mit frustrum und occlusion culling\cite{_culling}}
+\end{figure}
+
 \subsection{Backface Culling}
+Backface culling ist mittlerweile ein Standardfeature welches die Ausrichtung der triangles eines meshes überprüft und damit festlegt ob diese gerendert werden sollen.
 \cite{_cryengine_culling}
 
 
@@ -31,13 +42,13 @@ Wenn GameObjects schnell erstellt und gelöscht werden müssen, ist Object Pooli
 \cite{_objectpooling}
 
 \section{Coroutines vs Update}
-Dieses Dokument ist als vorwiegend technische Starthilfe für das
-Erstellen einer Masterarbeit (oder Bachelorarbeit) mit \latex
-gedacht und ist die Weiterentwicklung einer früheren
-Vorlage\footnote{Nicht mehr verfügbar.} für das Arbeiten mit
-Microsoft \emph{Word}. Während ursprünglich daran gedacht war, die
-bestehende Vorlage einfach in \latex zu übernehmen, wurde rasch
-klar, dass allein aufgrund der großen Unterschiede zum Arbeiten
-mit \emph{Word} ein gänzlich anderer Ansatz notwendig wurde. Dazu
-kamen zahlreiche Erfahrungen mit Diplomarbeiten in den
-nachfolgenden Jahren, die zu einigen zusätzlichen Hinweisen Anlass gaben.
+In Unity werden sowohl Coroutines als auch die Update-Methode verwendet, um den Zustand eines Spiels oder einer Anwendung im Laufe der Zeit zu aktualisieren. Sie funktionieren jedoch auf leicht unterschiedliche Weise, was sich auf ihre Leistungsmerkmale auswirken kann. Die Update-Methode ist eine eingebaute Unity-Funktion, die einmal pro Frame aufgerufen wird und typischerweise zur Aktualisierung der Positionen, Geschwindigkeiten und anderer Eigenschaften von Objekten in der Szene verwendet wird. Diese Methode wird von Unity automatisch aufgerufen. Coroutines sind eine Möglichkeit, benutzerdefinierte Iterationen zu erstellen, die gleichzeitig mit der Update-Methode ausgeführt werden. Eine Coroutine ist im Wesentlichen eine Funktion, die angehalten und zu einem späteren Zeitpunkt wieder aufgenommen werden kann. Coroutines können verwendet werden, um einen Prozess durchzuführen, welcher über einen bestimmten Zeitraum hinweg erfolgen soll, z. B. das Verschieben eines Objekts an eine neue Position oder das Abspielen einer Animation. Coroutines sind weniger performance-effizient als die Update-Methode. Wenn der Zustand eines Objekts sich einmal pro Frame aktualisieren soll, ist es in der Regel am besten, die Update-Methode zu verwenden. Dadurch wird sichergestellt, dass die Änderungen mit dem Rest des Spiels synchronisiert sind und es benötigt weniger Rechenleistung. Wenn man eine Funktion immer wieder pausieren muss und diese vielleicht sogar in anderen Abständen, als jeden Frame, aufrufen will, dann ist eine Coroutine die bessere Wahl.
+\cite{dickinson2015unity}
+
+\section{Static and Dynamic Colliders}
+Static Collider in der Unity-Engine sind nicht die Objekte, welche den Static Flag angehakt haben, sondern Objekte welche keinen Rigidbody haben. Objekte auf welchen die Rigidbody Komponente ist, gelten als Dynamic Collider. Static Collider werden, anders als die Dynamic Collider, in eine andere optimierte Struktur kombiniert.
+\cite{dickinson2015unity}
+
+\section{Verschiedene Arten von Collidern}
+
+\cite{dickinson2015unity}
