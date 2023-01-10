@@ -44,7 +44,7 @@ Diese Wege stürtzen auch nicht sofort ein. Sie haben eine Animation, die die Sp
 
 ## Kurven vs. Geraden
 
-Die PC-Spieler werden so umgesetzt, dass sie grundsätzlich von alleine bergab fahren können. Eine permanente links kurve bedeutet also nicht, dass der PC-Spieler permanent nach links lenken muss. Jedoch wird es mit der Zeit sehr langweilig die Ganze zeit in eine Richtung fahren zu müssen. Daher wird die Map aus vielen Kurven bestehen, die Ecken und Kanten davon bieten gute Möglichkeiten Long-Term-Spells zu plazieren da sie da die grrößte fäche abdecken.
+Die PC-Spieler werden so umgesetzt, dass sie grundsätzlich von alleine bergab fahren können. Eine permanente links kurve bedeutet also nicht, dass der PC-Spieler permanent nach links lenken muss. Jedoch wird es mit der Zeit sehr langweilig die Ganze zeit in eine Richtung fahren zu müssen. Daher wird die Map aus vielen Kurven bestehen, die Ecken und Kanten davon bieten gute Möglichkeiten Long-Term-Spells zu plazieren da sie dort die größte fäche abdecken.
 
 ## Quick Topdown View
 
