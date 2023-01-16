@@ -46,7 +46,7 @@ Kann man Spells kombinieren/craften? Nein
 
 Sie haben einen größerer Wirkungsradius/Flächeneffekte. Sie dürfen den Spieler nie sofort töten, da sie direkt in den Spielern platziert werden können.
 
-z.B. Regen / Hagel, Splash (Bodeneigenschaften), Jelly, mikado schachtel die man schütteln kann
+z.B. Regen / Hagel, Splash (Bodeneigenschaften), Jelly, mikado schachtel die man schütteln kann, kleber (blockiert die ersten paar sprünge)
 
 ### Cooldown
 
@@ -60,7 +60,7 @@ Es gibt vordefinierte Plätze für diese Art von Spells. Dadurch kann man sie ni
 
 Man kann sie danach nicht mehr verschieben allerdings kann man sie zerstören, und man bekommt einen kleinen Teil der Mana zurück.
 
-z.B. Schneemänner
+z.B. Schneemänner, Schneeraupen
 
 ### Map
 
