@@ -14,7 +14,4 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           files: |
-            examples/paper.tex
-            examples/slides.tex
-          handouts: |
-            examples/slides.tex
+            LaTeX/DA_Snowboards/_DABA.TEX
