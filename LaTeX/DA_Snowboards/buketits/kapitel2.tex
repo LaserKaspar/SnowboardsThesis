@@ -133,8 +133,31 @@ In Unity werden sowohl Coroutines als auch die Update-Methode verwendet, um den 
 
 \section{Static and Dynamic Colliders}
 Static Collider in der Unity-Engine sind nicht die Objekte, welche den Static Flag angehakt haben, sondern Objekte welche keinen Rigidbody haben. Objekte auf welchen die Rigidbody Komponente ist, gelten als Dynamic Collider. Static Collider werden, anders als die Dynamic Collider, in eine andere optimierte Struktur kombiniert.
-\cite{dickinson2015unity}
+
+Static Collider
+A static collider is a GameObject that has a Collider but no Rigidbody. Static colliders are mostly used for level geometry which always stays at the same place and never moves around. Incoming Rigidbody objects collide with static colliders but don’t move them.
+
+In particular cases, the physics engine optimizes for static colliders that never move. For instance, a vehicle resting on top of a static collider remains asleep even if you move this static collider. You can enable, disable, or move static colliders in runtime without specially affecting the physics engine computation speed. Also, you can safely scale a static Mesh Collider as long as the scale is uniform (not skewed).
+
+Rigidbody Collider
+This is a GameObject with a Collider and a normal, non-kinematic Rigidbody attached. Rigidbody colliders are fully simulated by the physics engine and can react to collisions and forces applied from a script. They can collide with other objects (including static colliders) and are the most commonly used Collider configuration in games that use physics.
+
+Kinematic Rigidbody Collider
+This is a GameObject with a Collider and a kinematic Rigidbody attached (ie, the IsKinematic property of the Rigidbody is enabled). You can move a kinematic rigidbody object from a script by modifying its Transform Component
+but it will not respond to collisions and forces like a non-kinematic rigidbody. Kinematic rigidbodies should be used for colliders that can be moved or disabled/enabled occasionally but that should otherwise behave like static colliders. An example of this is a sliding door that should normally act as an immovable physical obstacle but can be opened when necessary. Unlike a static collider, a moving kinematic rigidbody will apply friction to other objects and will “wake up” other rigidbodies when they make contact.
+
+Even when immobile, kinematic rigidbody colliders have different behavior to static colliders. For example, if the collider is set to as a trigger then you also need to add a rigidbody to it in order to receive trigger events in your script. If you don’t want the trigger to fall under gravity or otherwise be affected by physics then you can set the IsKinematic property on its rigidbody.
+
+A Rigidbody component can be switched between normal and kinematic behavior at any time using the IsKinematic property.
+
+A common example of this is the “ragdoll” effect where a character normally moves under animation but is thrown physically by an explosion or a heavy collision. The character’s limbs can each be given their own Rigidbody component with IsKinematic enabled by default. The limbs move normally by animation until IsKinematic is switched off for all of them and they immediately behave as physics objects. At this point, a collision or explosion force will send the character flying with its limbs thrown in a convincing way.
+\cite{_staticCollider}
 
 \section{Verschiedene Arten von Collidern}
 In work
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=11cm]{images/buketits_collidertypes}
+	\caption{Verschiedene Arten von Collidern}
+\end{figure}
 \cite{dickinson2015unity}
