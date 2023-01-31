@@ -1,6 +1,8 @@
 \chapter{PC und VR Welt - Umsetzung}
 \section{Level Aufbau}
 Jedes Level in Tricks ´n´ Treats ist ähnlich aufgebaut. 
+In der Mitte befindet sich der Berg, auf welchem die Snowboardenden fahren und rund herum befindet sich der Raum des VR Spielers. Die PC Spieler starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR Spieler kann mit einem Joystick auf seinem Controller den Berg rotieren um sich besser auf der Strecke zu orientieren und die Spieler in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC Spielern anwenden.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=13cm]{images/buketits_room}
@@ -8,8 +10,7 @@ Jedes Level in Tricks ´n´ Treats ist ähnlich aufgebaut.
 \end{figure}
 
 \section{VR Spieler}
-In jedem der Level in Tricks ´n´ Treats ist der Berg, auf welchem die PC Spieler fahren in der Mitte des Raumes
-
+Der VR Spieler besteht aus mehreren System welche zusammen arbeiten. In Tricks ´n´ Treats sind die Kamera und Hände mit Hilfe der SteamVR Integration für Unity gemacht. Der VR Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, welche beide von SteamVR bereitgestellt werden. Ein großes Problem unseres Spiels (welches im nächsten Kapitel erklärt und gelöst wird) ist, dass der VR Charakter, welcher physikalische Hände besitzt nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig.
 
 \subsection{Spell System}
 Zitat
