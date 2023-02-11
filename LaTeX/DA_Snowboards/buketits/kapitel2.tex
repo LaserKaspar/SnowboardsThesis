@@ -12,55 +12,13 @@ Der Begriff LOD (Level of Detail) bezieht sich auf die Komplexität der 3D Darst
 \section{Culling}
 Beim 3D-Rendering beschreibt der Begriff Culling das frühzeitige Aussortieren von Objekten jeglicher Art, welche nicht zum endgültigen Bild beitragen. Es gibt viele Techniken, die Objekte in verschiedenen Bereichen der Rendering-Pipeline aus zu sortieren. Einige dieser Techniken werden vollständig in Software auf der CPU ausgeführt, andere werden von der Hardware (GPU) unterstützt und wieder andere sind in die Grafikkarte integriert. Es ist hilfreich, alle diese Techniken zu verstehen, um eine gute Leistung zu erzielen. Um viel Rechenkraft zu sparen, ist es wichtig, frühzeitig und in größerem Umfang zu cullen. Wichtig ist auch, dass das Culling an sich, selbst nicht zu viel Leistung und Speicherplatz kostet.
 Normalerweise erfolgt das Culling der Engine auf der Draw Call Ebene. Beim Culling werden nicht die einzelnen Triangles gecullt, sondern ganze Objekte. Das bedeutet, dass es sinnvoll sein kann, große Objekte in mehrere Teile aufzuteilen, so dass nicht alle Teile zusammen gerendert werden.
+Was vom Culling ausgeblendet wird, muss auch nicht von der GPU berechnet werden.
 
+\subsection{Beispiel}
+Ein Objekt, bei welchem Culling angewandt werden könnte ist z.B ein Haus, welches einen Innenraum besitzt. Dieses Haus besteht aus 5 Millionen Triangles. Sieht man das Gebäude, dann sieht man also 5 Millionen Triangles. Sieht man es nicht rendert man 5 Millionen Triangles weniger. Nun könnte man optimieren.
+Der wichtigste Schritt bei so einem Haus wäre, den Innenraum von der äußeren Fassade zu trennen. So kann man den Innenraum cullen, fall man sich außerhalb des Gebäudes befindet und spart z.B. die Hälfte der Triangles ein. Umgekehrt kann man die Fassade cullen, wenn man sich innerhalb des Gebäudes aufhält.
+Zusätzlich kann man jetzt noch Level of Detail für die äußere Fassade verwenden um Triangles zu sparen, während man nicht in unmittelbarer Nähe des Gebäudes befindet. Sollte man ein detailliertes Gebäude implementieren wollen, ist es oft klug, dieses Gebäude in mehrere Teile zu teilen und auf diesen zusätzlich LoDs zu verwenden. Culling ist also wesentlich mehr als nur eine Funktion und es muss vorher überlegt werden, wo und wie es angewandt wird.
 
-Das Culling ist nochmal ne andere Geschichte auch hier streiten sich die Geister.
-
-
-
-Was vom Culling ausgeblendet wird muss auch nicht von der GPU berechnet werden.
-
-Aber Objekte müssen auch Cullingbar sein, ich geb dir mal ein Beispiel:
-
-
-
-Mal angenommen du hast ein Wolkenkratzer den du von fast überall aus sehen kannst. Der Gesamte Wolkenkratzer besteht aus 15 Millionen Triangles.
-
-Besteht der Wolkenkratzer aus einem einzigen Objekt, bedeutet das entweder:
-
-
-
-1.Das Gesamte Gebäude wird gesehen es werden also 15 Millionen Triangles eingeblendet
-
-
-
-oder
-
-
-
-2.Das Gebäude wird nicht gesehen du hast also 15 Millionen Triangles weniger.
-
-
-
-Nun könntest du auch das innere des Wolkenkratzers separat machen und die Fasadenteile ebenfalls extra.
-
-
-
-Die Fassade besteht aus 5 Millionen Polygonen und das innere aus 10 Millionen Polygonen.
-
-Sieht man das Gebäudevon außen so muss nur die Fassade mit 5 Millionen Polygonen angezeigt werden und das innere des Gebäudes bleibt ausgeblendet und wird nur Raum für Raum eingeblendet wenn du das Gebäude betrittst.
-
-
-
-Culling ist also nicht einfach nur eine Funktion, sondern man muss sich auch überlegen wie man die Meshes sinnvoll aufteilt damit komplexe Modelle sinnvoll ein oder ausgeblendet werden.
-
-
-
-Hier können mehr Objekte manchmal performanter sein als riesige Meshes.
-
-
-
-Durch LODs kann man das nun noch weiter aufsplitten und performanter machen.
 \cite{_cryengine_culling}
 
 \subsection{Frustum Culling}
@@ -82,19 +40,8 @@ Backface culling ist mittlerweile ein Standardfeature welches die Ausrichtung de
 \cite{_cryengine_culling}
 
 \section{Draw Calls}
-Es gibt dinge die berechnet die CPU und es gibt dinge die Berechnet die GPU.
-Aufgaben die die CPU an die GPU weiter gibt, nennt man Drawcalls.
-Man kann sich ein Drawcall also wie ein Brief vorstellen das die CPU an die GPU schickt.
-Es Gilt: Umso mehr Brief die CPU an die GPU versendet, umso mehr Briefe muss die GPU öffnen und lesen.
-Das Öffnen, dauert hierbei immer länger als das Lesen.
-Tust du also Meshes miteinander verbinden, werden es zwar weniger Briefe aber es gibt mehr zu lesen. (Da die Informationen größer sind)
-Aber wie gesagt, lieber mehr lesen als viele Briefe.
-Drawcalls werden aber nicht nur von Meshes verursacht sondern von allem was deine GPU Berechnet da kommen zb auch Schatten und Reflektions Berechnungen usw dazu.
-Dafür gibts leider auch kein Patent Rezept und wo sagen kann, wenn du es so machst, dann machst du es richtig. Es kommt immer darauf an.
-
-Das Problem ist auch:
-Auch wenn du Meshes verbinden tust, wird die FBX file immer größer. .Ein IPAD kann nur Meshes ich glaube mit bis zu 2GB lesen. Sind deine Meshes größer hagelt es Fehlermeldungen beim kompilieren. Keine Ahnung wo und ob es beim PC ähnliche Begrenzungen gibt.
-Aber du kannst eben an eine Grafikkarte keine 10 Terrabyte große Information schicken.
+In einem Spiel werden unterschiedliche Aufgaben entweder von GPU oder CPU berechnet.
+Aufgaben, welche die CPU and die GPU weiter gibt, nennt man Drawcalls. Man kann sich Drawcalls bildhaft als Briefe vorstellen, welche die CPU and die GPU weitersendet. Umso mehr Drawcalls geschickt werden, umso mehr Drawcalls muss die GPU verarbeiten. Das empfangen eines Drawcalls dauert in der Regel länger als diesen call zu verarbeiten. Grundsätzlich (ohne andere Optimierungen) wird für jedes einzelne Mesh ein Drawcall versendet. Somit ist es vorteilhaft, wenn möglich, viele kleine Objekte in ein großes Mesh zu kombinieren. So gibt es weniger Drawcalls, jedoch werden die Drawcalls größer. Man muss also eine gute Balance zwischen Menge und Größe finden. Grundsätzlich kann man jedoch grob behaupten, dass man möglichst wenige Drawcalls senden sollte. Drawcalls werden aber nicht nur von Meshes verursacht, sondern können beispielsweise auch aus Schattenberechnungen und Reflektionen entstehen.
 
 \subsection{Dynamic Draw call batching}
 Die Unity-Engine stapelt draw calls von mehreren GameObjects, welche das gleiche Material verwenden. Somit wird die Anzahl der draw calls reduziert und die Last auf der Grafikkarte verringert. Die besten Ergebnisse können erzielt werden, indem das Selbe Material auf möglichst viele Objekte angewandt wird. Um diese Technik anzuwenden muss man jedoch auf ein paar Regulierungen achten. Mesh Renderer, Trail Renderer, Line Renderer, Particle Systems und Sprite Renderer unterstützen draw call batching. Andere rendering components unterstützen diese Technik nicht. Abgesehen davon, muss die rendering component die selbe sein. Das heißt, dass z.B. Mesh Renderer und Trail Renderer nicht gebatcht werden. Sollte man mehrere Materialien verwenden, ist es auch möglich die gleiche Textur zu einzusetzen und damit Performance zu sparen. Dieser Vorgang heißt texture atlasing.
