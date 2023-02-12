@@ -60,7 +60,7 @@ Es gibt vordefinierte Plätze für diese Art von Spells. Dadurch kann man sie ni
 
 Man kann sie danach nicht mehr verschieben allerdings kann man sie zerstören, und man bekommt einen kleinen Teil der Mana zurück.
 
-z.B. Schneemänner, Schneeraupen
+z.B. Schneemänner, Schneeraupen, Einstürzende Teile der Strecke
 
 ### Map
 
