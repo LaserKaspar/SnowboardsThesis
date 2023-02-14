@@ -37,13 +37,19 @@ Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und 
 Nicht möglich
 
 \subsubsection{Culling}
-Nicht möglich
+Dadurch dass die PC und VR Kamera gleichzeitig rendern kann Culling nur begrenzt angewendet werden. Occlusion Culling könnte durch eigenen Code, welcher anhand des View Frustrums die Objekte prüft und dementsprechend cullt implementiert werden. Eine Frage die vorab gestellt werden muss ist jedoch: Entsteht dadurch eine nennenswerte Verbesserung? Man kann nur testen ob der Code nicht mehr Rechenleistung braucht als das rendern der zusätzlichen Objekte. Da wir durch andere Maßnahmen genug optimiert haben, wurde die Zeit um in diesem Bereich zu forschen anders verwendet.
 
 \subsubsection{Collider}
-t
+ In Tricks ´n´ Treats bestehen alle Objekte mit denen kollidiert werden kann aus simplen Collider Formen und komplexere Strukturen werden aus mehreren primitiven gebaut. 
+ Für die Effizienz der Collider gilt Sphere>Capsule>Box>Mesh.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9cm]{images/buketits_correctCollider}
+	\caption{Korrekte Collider}
+\end{figure}
 
 \subsubsection{Object Pooling}
-t
+In Tricks ´n´ Treats gibt es keine Objekte, welche gepoolt werden könnten um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt Pooling System.
 
 \subsubsection{Drawcall Batching}
 t
