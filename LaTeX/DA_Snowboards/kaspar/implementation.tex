@@ -78,9 +78,13 @@ Da der Wettbewerb zwischen PC und VR asymmetrisch ist, müssen beide Parteien di
 
 \subsubsection{Spell Design\label{_spell_design}}
 
-Um dem VR-Spielenden das Gefühl von Zaubern zu übermitteln, braucht es neben der Möglichkeit zu Zaubern auch gute Interaktionen. Außerdem muss das Spell-System dem Magier die Möglichkeit geben zu Multitasken und Kombos zu machen, damit er sich Mächtig fühlt. Da der VR-Spieler zwei Hände hat, ist es naheliegend, dass beide Hände an einem unterschiedlichen Spells arbeiten können.
+Um dem VR-Spielenden das Gefühl von Zaubern zu übermitteln, braucht es neben der Möglichkeit zu Zaubern auch gute Interaktionen. Außerdem muss das Spell-System dem Magier die Möglichkeit geben zu Multitasken und Kombos zu machen, damit er sich Mächtig fühlt. Da der VR-Spieler zwei Hände hat, ist es naheliegend, dass beide Hände an einem unterschiedlichen Spells arbeiten können. Um eine gewisse Vielfalt in die möglichen Spells zu bringen, habe ich drei Spell-Kategorien eingeführt.
 
-\paragraph{Spell-Types}
+\paragraph{Instant-Spell}
+\paragraph{Short-Term-Spell}
+\paragraph{Long-Term-Spell}
+
+\paragraph{Mana System}
 
 \subsubsection{PC -> VR Interactions}
 
@@ -92,18 +96,41 @@ Das Design des VR-Raumes geht Hand in Hand mit dem Design der Strecke. Je nach d
 
 \subsection{Playercontroller \& Obstacles\label{_playercontroller}}
 \subsubsection{Tricks}
-\subsubsection{Respawns}
-\subsubsection{Automatische Lenkhilfe}
+Tricks können zum einen dazu genutzt werden, ein Risiko einzugehen um die Respawn-Zeit zu verkürzen oder als eine Movement-Mechanic, die dabei hilft Obstacles auszuweichen.
 
+\subsubsection{Respawns}
+Das Wiedereintreten von ausgeschiedenen Spielenden ist eine wichtige Mechanik um das Gefühl des Snowboardens einzufangen und um den Party-Aspekt des Spieles zu fördern. Es gibt verschiedene Möglichkeiten zu regeln, wann ein Spielende wieder in die Runde eintritt.
+
+\paragraph{Timer}
+Eine sehr simple Möglichkeit wäre, Ausgeschiedene nach einer gewissen Zeit automatisch wieder dem Rennen hinzuzufügen. Das hätte den Vorteil, dass es zum einen sehr leicht umsetzbar ist, es den Spielenden eine kleine Pause verschafft und der Timer sich durch andere Faktoren beeinflussen ließe.
+
+\paragraph{Sekundäres Ziel für ausgeschiedene Spielende}
+Eine weiterer Weg, der den augeschiedenen Spielende etwas zu tun gibt, wäre ein Sekundäres Ziel. Sie müssten um wieder ins Rennen zu kommen, eine kleine Aufgabe lösen, bestimmte Knöpfe schnell hintereinander drücken (verbunden mit viel Game-Juice), oder den VR-Spieler behindern.
+
+\subsubsection{Automatische Lenkhilfe}
+Da die Spieler bei dem Berg- oder Spiralen-Streckendesign permanent im Kreis lenken müssen, wäre es wichtig, dem entgegenzuwirken, um das Gefühl des "`im Kreis"'-fahrens zumindest etwas zu mindern.
+
+\subsubsection{Spieler führen}
+Wenn man Spielende für riskantes Fahren belohnt entsteht eine meaningful decision. Es entsteht eine risk-reward situation, in der schlechte Team-Mitglieder sich von den guten abspalten und andere Wege nehmen. Mithilfe von Rampen Slalom-Bögen, die die Respawn-Zeit verkürzen, kann man riskantes fahren fördern.
 
 \subsection{Teamwork erzeugen - Krone \& andere Lösungsansätze\label{_teamwork_erzeugen}}
-Um die Snowbaord-Gruppe dazu zu bewegen zu Kooperieren, müssen sie ein gemeinsames Ziel haben. Dieses Ziel ist schlussendlich das Ende der Strecke
+Um die Snowbaord-Gruppe dazu zu bewegen zu Kooperieren, müssen sie ein gemeinsames Ziel haben. Dieses Ziel ist schlussendlich das Ende der Strecke jedoch braucht es auch ein kurzzeitiges Ziel wie zum Beispiel einem ausgeschiedenen Spielenden dabei zu helfen, wieder ins rennen zu kommen. Mögliche aufgaben dafür das Einsammeln von bestimmten Punkten auf der Strecke, das halten der Krone um einen Ausgeschiedenen Spieler wieder ins Rennen zu holen, oder eine gemeinsame Aktion.
 
+\subsubsection{Coop-Points}
+Bei Coop-Points müssen verschiede Spieler zur selben Zeit bei zwei verschiedenen Orten sein. Dadurch muss es zwingend zu einer Absprache zwischen den Spielenden geben, um auszumachen, wer wohin fährt.
 
 \subsubsection{Krone}
+Der erste Spieler hält immer die Krone, wenn die Krone länger als eine gewisse Zeit vom selben Spieler gehalten wird, kann ein ausgeschiedener Spielender wieder ins auf die Piste. Sollte die Krone von einem anderen Spieler übernommen worden sein, bevor ein Snowboarder respawnt ist, wird der Timer wieder länger. Nach einem Respawn, muss die Krone an einen anderen Spieler übergeben werden.
+
+\subsubsection{Gemeinsame Aktion}
+Eine Gemeinsame Aktion wäre beispielsweise, dass alle Snowboarder zur selben zeit Springen oder einen Trick ausführen. Das würde wieder ein großes Risiko mit sich bringen, da alle gleichzeitig sterben könnten.
 
 \subsubsection{Rubberbanding - Balanceakt}
 
-\section{Target Experience vs Playtests}
+\section{Playtests}
+
+[Spieler Spawnen unerwartet und sterben sofort wieder - Interaktion bevor ein Spieler respawnt]
 
 \section{Balancing}
+
+[Spell \& Mana Balancing]
