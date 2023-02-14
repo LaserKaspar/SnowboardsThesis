@@ -9,14 +9,14 @@ In der Mitte befindet sich der Berg, auf welchem die Snowboardenden fahren und r
 	\caption{Editor View eines unfertigen Levels, Die rote Kapsel stellt den VR-Spieler dar}
 \end{figure}
 
-\section{VR Spieler}
-Der VR Spieler besteht aus mehreren System welche zusammen arbeiten. In Tricks ´n´ Treats sind die Kamera und Hände mit Hilfe der SteamVR Integration für Unity gemacht. Der VR Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, welche beide von SteamVR bereitgestellt werden. Ein großes Problem unseres Spiels (welches im nächsten Kapitel erklärt und gelöst wird) ist, dass der VR Charakter, welcher physikalische Hände besitzt nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig.
+\section{VR Spieler} \label{simon_vrspieler}
+Der VR Spieler besteht aus mehreren System welche zusammen arbeiten. In Tricks ´n´ Treats sind die Kamera und Hände mit Hilfe der SteamVR Integration für Unity gemacht. Der VR Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, welche beide von SteamVR bereitgestellt werden. Ein großes Problem unseres Spiels ist, dass der VR Charakter, welcher physikalische Hände besitzt nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig. Die Lösung dieses Problems ist in \ref{simon_problems} erklärt.
 
 \subsection{Zauber und Interaktionssystem}
 Für die Basis des Interaktionssystems in Tricks ´n´ Treats, dient das System, das SteamVR für Unity bereitstellt. Auf jedem Objekt, mit welchem der VR Spielende interagieren kann, befindet sich das "`Interactable"' Script, welches von SteamVR bereitgestellt ist. Unser eigenes System für die Zauberkugeln hakt sich in dieses Script ein und kann somit bestimmte Eigenschaften leichter implementieren. Somit haben wir also eine Hervorhebung für Objekte geschaffen mit denen interagiert werden und können gleichzeitig auf die Eingabe des VR Controllers reagieren. Wenn eine Zauberkugel mit einem Objekt kollidiert (während man sie in der Hand hält), wird dann mit dem, von Steam vorgegebenen, "`Velocity Estimator"' die Aufprallgeschwindigkeit ausgerechnet und je nach Geschwindigkeit ein Zauberspruch gewirkt.
 
 \subsection{VR Umgebung}
-t
+Die Form der VR Umgebung basiert auf einem Kreis, bei welchem sich der Berg in der Mitte befindet und der Spielbereich des VR Spielers auf einem Ring um den Berg.
 
 \section{PC Spieler}
 t
@@ -27,17 +27,33 @@ Zitat
 \subsection{Fähigkeiten}
 Zitat
 
-\section{Lösung der erwarteten Probleme}
+\section{Lösung der erwarteten Probleme}\label{simon_problems}
 t
 
 \subsection{Wenige Bilder pro Sekunde}
-Zitat
+Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und das Spiel auch auf älteren Systemen spielbar zu machen, muss es gut optimiert sein. Welche Möglichkeiten zur Rechenoptimierung aus \ref{simon_performance} verwendet wurden und welche nicht implementierbar waren sind anbei zu sehen.
 
-\subsection{Bewegungskrankheit}
-Zitat
+\subsubsection{Level of Detail}
+Nicht möglich
+
+\subsubsection{Culling}
+Nicht möglich
+
+\subsubsection{Collider}
+t
+
+\subsubsection{Object Pooling}
+t
+
+\subsubsection{Drawcall Batching}
+t
+
+\subsection{Bewegungskrankheit und Rotationsproblem}
+Um die Bewegungskrankheit (Motion Sickness) zu vermeiden haben wir die in \ref{simon_motionsickness} angebrachten Ursachen dafür beachtet und unsere Systeme passend dazu entworfen und implementiert.
+Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR Spieler nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR Spieler in einem Ring um den Berg gedreht werden muss um den Spielern folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch Bewegegungskrank. Damit dem VR Spieler nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR Spielers und die sich darin befindenden Lichter zusammen mit dem VR Spieler gedreht. Somit wirkt es für den VR Spieler so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
 
 \subsection{Platz und Bewegung}
-Zitat
+Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, welche mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR Spieler sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
 
 \subsection{Interaktionen}
 Zitat
