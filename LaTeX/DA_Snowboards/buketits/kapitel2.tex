@@ -2,7 +2,7 @@
 \section{Level Of Detail}
 Der Begriff LOD (Level of Detail) bezieht sich auf die Komplexität der 3D Darstellung eines 3D-Models. Das LOD kann mit der Distanz vom Betrachter oder nach Wichtigkeit des Objektes verringert oder erhöht werden. LOD kann die Geschwindigkeit und Effizienz des Renderings erhöhen, indem die Arbeitslast in der Grafikpipeline verringert wird. Diese Performance-Verbesserung wird dadurch erhalten, dass beispielsweise weniger Vertices gerendert werden müssen. Die verringerte visuelle Qualität ist oft nicht bemerkbar, da Objekte sich dann in erhöhter Distanz befinden oder sich schnell bewegen. LOD wird meistens nur auf Geometriedetails angewendet, jedoch kann dieses Konzept auch anders angewendet werden. Theoretisch kann man auch Shader und Pixelkomplexität basierend auf diesen Parametern abändern. Das sogenannte Mipmapping, welches seit einigen Jahren existiert, kann ebenfalls eine höhere Renderingqualität bieten.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=11cm]{images/buketits_lod}
 	\caption{\cite{_lod_formeshes}}
@@ -29,7 +29,7 @@ Frustrum culling ist eine wichtige Technik, welche in so gut wie jeder ernstzune
 Occlusion culling überprüft ob Objekte oder auch triangles von anderen verdeckt werden und rendert diese dann nicht. Diese Technik ist besonders bei Szenen mit hoher Tiefenkomplexität äußerst wichtig und kann zu erheblichen Performance Einsparungen führen.
 \cite{_cryengine_culling}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=12cm]{images/buketits_frustrum}
 	\caption{Zeigt view frustrum pyramid 1.ohne Culling, 2.mit frustrum culling, 3.mit frustrum und occlusion culling\cite{_culling}}
@@ -89,7 +89,7 @@ Auch wenn dieser sich nicht bewegt, hat dieser ein anderes verhalten als ein sta
 
 \section{Verschiedene Arten von Collidern}
 *in research*
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=11cm]{images/buketits_collidertypes}
 	\caption{Verschiedene Arten von Collidern}
