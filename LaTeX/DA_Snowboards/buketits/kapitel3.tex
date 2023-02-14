@@ -37,13 +37,19 @@ Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und 
 Nicht möglich
 
 \subsubsection{Culling}
-Nicht möglich
+Dadurch dass die PC und VR Kamera gleichzeitig rendern kann Culling nur begrenzt angewendet werden. Occlusion Culling könnte durch eigenen Code, welcher anhand des View Frustrums die Objekte prüft und dementsprechend cullt implementiert werden. Eine Frage die vorab gestellt werden muss ist jedoch: Entsteht dadurch eine nennenswerte Verbesserung? Man kann nur testen ob der Code nicht mehr Rechenleistung braucht als das rendern der zusätzlichen Objekte. Da wir durch andere Maßnahmen genug optimiert haben, wurde die Zeit um in diesem Bereich zu forschen anders verwendet.
 
 \subsubsection{Collider}
-t
+ In Tricks ´n´ Treats bestehen alle Objekte mit denen kollidiert werden kann aus simplen Collider Formen und komplexere Strukturen werden aus mehreren primitiven gebaut. 
+ Für die Effizienz der Collider gilt Sphere>Capsule>Box>Mesh.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9cm]{images/buketits_correctCollider}
+	\caption{Korrekte Collider}
+\end{figure}
 
 \subsubsection{Object Pooling}
-t
+In Tricks ´n´ Treats gibt es keine Objekte, welche gepoolt werden könnten um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt Pooling System.
 
 \subsubsection{Drawcall Batching}
 t
@@ -51,6 +57,14 @@ t
 \subsection{Bewegungskrankheit und Rotationsproblem}
 Um die Bewegungskrankheit (Motion Sickness) zu vermeiden haben wir die in \ref{simon_motionsickness} angebrachten Ursachen dafür beachtet und unsere Systeme passend dazu entworfen und implementiert.
 Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR Spieler nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR Spieler in einem Ring um den Berg gedreht werden muss um den Spielern folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch Bewegegungskrank. Damit dem VR Spieler nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR Spielers und die sich darin befindenden Lichter zusammen mit dem VR Spieler gedreht. Somit wirkt es für den VR Spieler so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=9cm]{images/buketits_layout}
+	\caption{Top Down Layout des VR Raums mit dem Berg in der Mitte, blauer Bereich rotiert}
+\end{figure}
+
+
 
 \subsection{Platz und Bewegung}
 Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, welche mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR Spieler sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
