@@ -86,12 +86,3 @@ Ein Kinematic Rigidbody Collider ist ein Game Object auf dem sich ein Collider u
 Ein Beispiel dafür wäre eine Schiebetür, die normalerweise ein unbewegliches Hindernis ist, sich aber wenn nötig öffnen kann. Im Gegensatz zu einem statischen Collider kann ein bewegender Kinematic Rigidbody Reibung an andere Objekte weitergeben und "`weckt"' andere Rigidbodies bei Kontakt auf.
 Auch wenn dieser sich nicht bewegt, hat dieser ein anderes verhalten als ein statischer Collider. Beispielsweise, kann ein Collider, der als Trigger gesetzt ist, nur Trigger Events empfangen, wenn sich ein Rigibody auf dem Game Object befindet. Sollte gewollt sein, dass dieser Trigger nicht von Physik beeinflusst werden kann, dann kann die IsKinematic Property auf dem zugehörigen Rigidbody aktiviert werden. Ein Rigidbody kann immer zwischen normal und kinematisch, mit Hilfe der IsKinematic Property, gewechselt werden. Ein gängiges Beispiel dafür wäre der "`Ragdoll"' Effekt, bei dem sich ein Charakter normalerweise mit Animationen bewegt, aber physikalisch geworfen werden kann. Beispielsweise könnte eine Explosion oder starke Kollision diesen Charakter schleudern. Es kann jedem Körperteil des Charakters ein Rigidbody zugewiesen werden, welcher auf IsKinematic gesetzt ist. Die Körperteile bewegen sich dann normal mit der Animation bis IsKinematic ausgeschalten wird und der Charakter sich wie ein Physikobjekt verhält. Jetzt könnte eine Explosion oder Kollision diesen Charakter werfen um eine glaubwürdige Reaktion auf diese Explosion zu bieten.
 \cite{_staticCollider}
-
-\section{Verschiedene Arten von Collidern}
-*in research*
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=11cm]{images/buketits_collidertypes}
-	\caption{Verschiedene Arten von Collidern}
-\end{figure}
-\cite{dickinson2015unity}
