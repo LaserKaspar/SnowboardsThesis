@@ -1,7 +1,7 @@
 \chapter{PC und VR Welt - Umsetzung}
 \section{Level Aufbau}
 Jedes Level in Tricks ´n´ Treats ist ähnlich aufgebaut. 
-In der Mitte befindet sich der Berg, auf dem die Snowboardenden fahren, und rund herum befindet sich der Raum des VR-Spielenden. Die PC-Spielenden starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR-Spielende kann mit einem Joystick auf seinem Controller den Berg rotieren, um sich besser auf der Strecke zu orientieren und die Spieler in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC-Spielenden anwenden.
+In der Mitte befindet sich der Berg, auf dem die Snowboardenden fahren, und rund herum befindet sich der Raum des VR-Spielenden. Die PC-Spielenden starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR-Spielende kann mit einem Joystick auf seinem Controller den Berg rotieren, um sich besser auf der Strecke zu orientieren und die Spielenden in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC-Spielenden anwenden.
 
 
 \begin{figure}[H]
@@ -19,8 +19,8 @@ Für die Basis des Interaktionssystems in Tricks ´n´ Treats, dient das System,
 \subsection{VR-Umgebung}
 Die Form der VR-Umgebung basiert auf einem Kreis, bei dem sich der Berg in der Mitte befindet und der Spielbereich des VR-Spielenden auf einem Ring um den Berg.
 
-\section{PC-Spieler}
-\subsection{Spieler Größe}
+\section{PC-Charakter}
+\subsection{Charakter Größe}
 Die PC-Charaktere sind sehr klein. Das kommt daher, dass der VR-Charakter nicht skaliert werden kann und daher die PC-Charaktere runter skaliert werden müssen. Das Iterieren der Werte für den Character Controller ist durch die geringe Größe etwas komplexer und ungewohnt. Dadurch, dass die PC-Charaktere so viel kleiner sind, muss auch die Schwerkraft anders eingestellt sein. Diese haben eine viel geringere Schwerkraft als die physikalischen Objekte, die sich im VR-Bereich befinden.
 
 \subsection{Fähigkeiten}
@@ -52,11 +52,11 @@ Dadurch dass die PC und VR-Kamera gleichzeitig Rendern kann Culling nur begrenzt
 In Tricks ´n´ Treats gibt es keine Objekte, die gepoolt werden könnten, um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt kein Pooling System.
 
 \subsection{Drawcall Batching}
-In Tricks ´n´ Treats wird sowohl Static als auch Dynamic Batching angewendet. Um Dynamic zu batchen verwenden wir Meshes mit weniger Vertices und alle haben dasselbe Material. Für Textur des Materials wird ein Textur Atlas verwendet, der alle Farben aller Meshes beinhaltet. Dies gilt für alle Meshes der Umgebung. Da die Spieler wegen einiger Rahmenbedingungen des Dynamic Batching nicht gebatcht werden können, verwenden diese einen anderen Atlas und Material. Static ist alles, was sich aus der Sicht der PC-Spieler nicht bewegt. Das heißt beispielsweise der Berg und die Objekte auf diesem. Hindernisse, die zerbrechen oder sich bewegen können jedoch nicht Static sein.
+In Tricks ´n´ Treats wird sowohl Static als auch Dynamic Batching angewendet. Um Dynamic zu batchen verwenden wir Meshes mit weniger Vertices und alle haben dasselbe Material. Für Textur des Materials wird ein Textur Atlas verwendet, der alle Farben aller Meshes beinhaltet. Dies gilt für alle Meshes der Umgebung. Da die Spielenden wegen einiger Rahmenbedingungen des Dynamic Batching nicht gebatcht werden können, verwenden diese einen anderen Atlas und Material. Static ist alles, was sich aus der Sicht der PC-Spielenden nicht bewegt. Das heißt beispielsweise der Berg und die Objekte auf diesem. Hindernisse, die zerbrechen oder sich bewegen können jedoch nicht Static sein.
 
 \subsection{Bewegungskrankheit und Rotationsproblem}
 Um die Bewegungskrankheit (Motion Sickness) zu vermeiden haben wir die in \ref{simon_motionsickness} angebrachten Ursachen dafür beachtet und unsere Systeme passend dazu entworfen und implementiert.
-Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR-Spielenden nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR-Spielenden in einem Ring um den Berg gedreht werden muss, um den Spielern folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch seekrank. Damit dem VR-Spielenden nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR-Spielenden und die sich darin befindenden Lichter zusammen mit dem VR-Spielenden gedreht. Somit wirkt es für den VR-Spielenden so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
+Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR-Spielenden nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR-Spielenden in einem Ring um den Berg gedreht werden muss, um den Spielenden folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch seekrank. Damit dem VR-Spielenden nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR-Spielenden und die sich darin befindenden Lichter zusammen mit dem VR-Spielenden gedreht. Somit wirkt es für den VR-Spielenden so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
 
 
 \begin{figure}[h]
@@ -68,7 +68,7 @@ Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR-Spielenden nicht 
 
 
 \subsection{Platz und Bewegung}
-Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, die mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR Spieler sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
+Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, die mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR-Spielende sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
 
 \subsection{Interaktionen}
 Die Interaktionen des VR-Spielenden müssen sich real anfühlen, um die Immersion nicht zu brechen. Deswegen verwenden wir in Tricks ´n´ Treats physikalische Hände, die nicht durch Objekte durch transformieren können. Außerdem vibriert die jeweilige Hand etwas, sobald man versucht durch ein Objekt zu greifen. Damit wird das Gefühl der Berührung ersetzt, dass mit den meisten VR-Controllern nicht umsetzbar ist.
