@@ -1,61 +1,63 @@
 \chapter{PC und VR Welt - Umsetzung}
 \section{Level Aufbau}
 Jedes Level in Tricks ´n´ Treats ist ähnlich aufgebaut. 
-In der Mitte befindet sich der Berg, auf welchem die Snowboardenden fahren und rund herum befindet sich der Raum des VR Spielers. Die PC Spieler starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR Spieler kann mit einem Joystick auf seinem Controller den Berg rotieren um sich besser auf der Strecke zu orientieren und die Spieler in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC Spielern anwenden.
+In der Mitte befindet sich der Berg, auf dem die Snowboardenden fahren, und rund herum befindet sich der Raum des VR-Spielenden. Die PC-Spielenden starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR-Spielende kann mit einem Joystick auf seinem Controller den Berg rotieren, um sich besser auf der Strecke zu orientieren und die Spielenden in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC-Spielenden anwenden.
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13cm]{images/buketits_room}
-	\caption{Editor View eines unfertigen Levels, Die rote Kapsel stellt den VR-Spieler dar}
+	\caption{Editor View eines unfertigen Levels, Die rote Kapsel stellt den VR-Charakter dar}
 \end{figure}
 
-\section{VR Spieler} \label{simon_vrspieler}
-Der VR Spieler besteht aus mehreren System welche zusammen arbeiten. In Tricks ´n´ Treats sind die Kamera und Hände mit Hilfe der SteamVR Integration für Unity gemacht. Der VR Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, welche beide von SteamVR bereitgestellt werden. Ein großes Problem unseres Spiels ist, dass der VR Charakter, welcher physikalische Hände besitzt nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig. Die Lösung dieses Problems ist in \ref{simon_problems} erklärt.
+\section{VR-Charakter} \label{simon_vrspieler}
+Der VR-Charakter besteht aus mehreren Systemen, die zusammenarbeiten. In Tricks ´n´ Treats sind die Kamera und Hände mit Hilfe der SteamVR Integration für Unity gemacht. Der VR-Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, die beide von SteamVR bereitgestellt werden. Ein großes Problem unseres Spiels ist, dass der VR-Charakter, der physikalische Hände besitzt nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig. Die Lösung dieses Problems ist in \ref{simon_problems} erklärt.
 
 \subsection{Zauber und Interaktionssystem}
-Für die Basis des Interaktionssystems in Tricks ´n´ Treats, dient das System, das SteamVR für Unity bereitstellt. Auf jedem Objekt, mit welchem der VR Spielende interagieren kann, befindet sich das "`Interactable"' Script, welches von SteamVR bereitgestellt ist. Unser eigenes System für die Zauberkugeln hakt sich in dieses Script ein und kann somit bestimmte Eigenschaften leichter implementieren. Somit haben wir also eine Hervorhebung für Objekte geschaffen mit denen interagiert werden und können gleichzeitig auf die Eingabe des VR Controllers reagieren. Wenn eine Zauberkugel mit einem Objekt kollidiert (während man sie in der Hand hält), wird dann mit dem, von Steam vorgegebenen, "`Velocity Estimator"' die Aufprallgeschwindigkeit ausgerechnet und je nach Geschwindigkeit ein Zauberspruch gewirkt.
+Für die Basis des Interaktionssystems in Tricks ´n´ Treats, dient das System, das SteamVR für Unity bereitstellt. Auf jedem Objekt, mit dem der VR-Spielende interagieren kann, befindet sich das "`Interactable"' Script, dass von SteamVR bereitgestellt ist. Unser eigenes System für die Zauberkugeln hakt sich in dieses Script ein und kann somit bestimmte Eigenschaften leichter implementieren. Somit haben wir also eine Hervorhebung für Objekte geschaffen mit denen interagiert werden und können gleichzeitig auf die Eingabe des VR-Controllers reagieren. Wenn eine Zauberkugel mit einem Objekt kollidiert (während man sie in der Hand hält), wird dann mit dem, von Steam vorgegebenen, "`Velocity Estimator"' die Aufprallgeschwindigkeit ausgerechnet und je nach Geschwindigkeit ein Zauberspruch gewirkt.
 
-\subsection{VR Umgebung}
-Die Form der VR Umgebung basiert auf einem Kreis, bei welchem sich der Berg in der Mitte befindet und der Spielbereich des VR Spielers auf einem Ring um den Berg.
+\subsection{VR-Umgebung}
+Die Form der VR-Umgebung basiert auf einem Kreis, bei dem sich der Berg in der Mitte befindet und der Spielbereich des VR-Spielenden auf einem Ring um den Berg.
 
-\section{PC Spieler}
-Die PC Spieler
-
-\subsection{Spieler Größe}
-Die PC Spieler sind sehr klein. Das kommt daher, dass der VR Spieler nicht skaliert werden kann und daher die PC Spieler runter skaliert werden müssen. Das Iterieren der Werte für den Character Controller ist durch die geringen Größe etwas komplexer und ungewohnt. Dadurch, dass die PC Charaktere so viel kleiner sind, muss auch die Schwerkraft anders eingestellt sein. Diese haben eine viel geringere Schwerkraft als die physikalischen Objekte, die sich im VR-Bereich befinden.
+\section{PC-Charakter}
+\subsection{Charakter Größe}
+Die PC-Charaktere sind sehr klein. Das kommt daher, dass der VR-Charakter nicht skaliert werden kann und daher die PC-Charaktere runter skaliert werden müssen. Das Iterieren der Werte für den Character Controller ist durch die geringe Größe etwas komplexer und ungewohnt. Dadurch, dass die PC-Charaktere so viel kleiner sind, muss auch die Schwerkraft anders eingestellt sein. Diese haben eine viel geringere Schwerkraft als die physikalischen Objekte, die sich im VR-Bereich befinden.
 
 \subsection{Fähigkeiten}
-Zitat
+Der PC-Character Controller kann lenken, springen und Tricks machen. Außerdem muss dieser auf bestimmte Zauber des VR-Charakters reagieren. Somit kann der PC-Charakter beispielsweise künstlich in eine Richtung geschleudert werden, wobei er auch eine Rotation bekommt. Die PC-Spielenden können dann, in der Luft, den jeweiligen Charakter austarieren und bei richtiger Ausführung wieder sicher landen. Sollte der Charakter auf dem Kopf oder in einem falschen Winkel landen, stürzt dieser und wird zu einem Ragdoll. (Physikalischer Körper, bei der jedes Körperteil eigene Kollisionen hat und somit einen realistischen Fall simuliert).
+Der Charakter kann zusätzlich, um besser ausweichen zu können, vorwärts und rückwärts Saltos, mit denen er schnell seine Position ändern kann.
+
 
 \section{Lösung der erwarteten Probleme}\label{simon_problems}
 
 \subsection{Wenige Bilder pro Sekunde}
-Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und das Spiel auch auf älteren Systemen spielbar zu machen, muss es gut optimiert sein. Welche Möglichkeiten zur Rechenoptimierung aus \ref{simon_performance} verwendet wurden und welche nicht implementierbar waren sind anbei zu sehen.
+Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und das Spiel auch auf älteren Systemen spielbar zu machen, muss es gut optimiert sein. Die Möglichkeiten zur Rechenoptimierung aus \ref{simon_performance}, die verwendet wurden und die, die nicht implementierbar waren sind anbei zu sehen.
 
-\subsubsection{Level of Detail}
+\subsection{Level of Detail}
 Dadurch, dass sich mehrere Kameras im selben Raum befinden, ist die Berechnung des Level of Detail für mehrere Kameras gleichzeitig zu rechenintensiv und bietet deshalb keine sichtbare Verbesserung.
 
-\subsubsection{Culling}
-Dadurch dass die PC und VR Kamera gleichzeitig rendern kann Culling nur begrenzt angewendet werden. Occlusion Culling könnte durch eigenen Code, welcher anhand des View Frustrums die Objekte prüft und dementsprechend cullt implementiert werden. Eine Frage die vorab gestellt werden muss ist jedoch: Entsteht dadurch eine nennenswerte Verbesserung? Man kann nur testen ob der Code nicht mehr Rechenleistung braucht als das rendern der zusätzlichen Objekte. Da wir durch andere Maßnahmen genug optimiert haben, wurde die Zeit um in diesem Bereich zu forschen anders verwendet.
+\subsection{Culling}
+Dadurch dass die PC und VR-Kamera gleichzeitig Rendern kann Culling nur begrenzt angewendet werden. Occlusion Culling könnte durch eigenen Code, der anhand des View Frustrums die Objekte prüft und dementsprechend cullt implementiert werden. Eine Frage, die vorab gestellt werden muss, ist jedoch: Entsteht dadurch eine nennenswerte Verbesserung? Man kann nur testen, ob der Code nicht mehr Rechenleistung braucht als der Rendering Prozess der zusätzlichen Objekte. Da wir durch andere Maßnahmen genug optimiert haben, wurde die Zeit, um in diesem Bereich zu forschen anders verwendet.
 
-\subsubsection{Collider}
+\subsection{Collider}
  In Tricks ´n´ Treats bestehen alle Objekte mit denen kollidiert werden kann aus simplen Collider Formen und komplexere Strukturen werden aus mehreren primitiven gebaut. 
- Für die Effizienz der Collider gilt Sphere>Capsule>Box>Mesh.
+ Für die Effizienz der Collider gilt Sphere>Capsule>Box>Mesh. Das heißt, dass ein Sphere Collider am effizientesten ist und ein Mesh Collider am ineffizientesten.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=9cm]{images/buketits_correctCollider}
 	\caption{Korrekte Collider}
 \end{figure}
 
-\subsubsection{Object Pooling}
-In Tricks ´n´ Treats gibt es keine Objekte, welche gepoolt werden könnten um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt Pooling System.
+\subsection{Object Pooling}
+In Tricks ´n´ Treats gibt es keine Objekte, die gepoolt werden könnten, um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt kein Pooling System.
 
-\subsubsection{Drawcall Batching}
-In Tricks ´n´ Treats wird sowohl static als auch dynamic batching angewendet. Um dynamic zu batchen verwenden wir meshes mit weniger vertices und alle haben das selbe Material. Für Textur des Materials wird ein Texturatlas verwendet, der alle Farben aller Meshes beinhaltet. Dies gilt für alle Meshes der Umgebung. Da die Spieler wegen einiger Rahmenbedingungen des dynamic batching nicht gebatcht werden können, verwenden diese einen anderen Atlas und Material. Static ist alles, was sich aus der Sicht der PC Spieler nicht bewegt. Das heißt beispielsweise der Berg und die Objekte auf diesem. Hindernisse, welche zerbrechen oder sich bewegen können jedoch nicht static sein.
+\subsection{Drawcall Batching}
+In Tricks ´n´ Treats wird sowohl Static als auch Dynamic Batching angewendet. Um Dynamic zu batchen verwenden wir Meshes mit weniger Vertices und alle haben dasselbe Material. Für Textur des Materials wird ein Textur Atlas verwendet, der alle Farben aller Meshes beinhaltet. Dies gilt für alle Meshes der Umgebung. Da die Spielenden wegen einiger Rahmenbedingungen des Dynamic Batching nicht gebatcht werden können, verwenden diese einen anderen Atlas und Material. Static ist alles, was sich aus der Sicht der PC-Spielenden nicht bewegt. Das heißt beispielsweise der Berg und die Objekte auf diesem. Hindernisse, die zerbrechen oder sich bewegen können jedoch nicht Static sein.
 
 \subsection{Bewegungskrankheit und Rotationsproblem}
 Um die Bewegungskrankheit (Motion Sickness) zu vermeiden haben wir die in \ref{simon_motionsickness} angebrachten Ursachen dafür beachtet und unsere Systeme passend dazu entworfen und implementiert.
-Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR Spieler nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR Spieler in einem Ring um den Berg gedreht werden muss um den Spielern folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch Bewegegungskrank. Damit dem VR Spieler nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR Spielers und die sich darin befindenden Lichter zusammen mit dem VR Spieler gedreht. Somit wirkt es für den VR Spieler so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
+Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR-Spielenden nicht skalieren und sondern ihn nur drehen. Die Strecke wiederum kann skaliert aber nicht gedreht werden. Das heißt, dass also der VR-Spielenden in einem Ring um den Berg gedreht werden muss, um den Spielenden folgen zu können. Einige Menschen werden bei einer derartigen Drehung jedoch seekrank. Damit dem VR-Spielenden nicht übel oder schwindelig wird, muss diesem das Gefühl gegeben werden, dass er den Berg rotiert und nicht er sich um den Berg. Um das zu umgehen, wird der gesamte Raum des VR-Spielenden und die sich darin befindenden Lichter zusammen mit dem VR-Spielenden gedreht. Somit wirkt es für den VR-Spielenden so, als würde sich eigentlich nur der Berg drehen, da für ihn alles andere statisch wirkt.
+
 
 \begin{figure}[h]
 	\centering
@@ -66,7 +68,10 @@ Wie in \ref{simon_vrspieler} angeführt wurde, kann man den VR Spieler nicht ska
 
 
 \subsection{Platz und Bewegung}
-Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, welche mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR Spieler sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
+Um möglichst vielen Menschen das Spielen von Tricks ´n´ Treats zu ermöglichen ist der Spielbereich so klein wie möglich, ohne ihn einengend zu gestalten. Das heißt, dass alles Wichtige in Griffreichweite ist und stationär erreicht werden kann. Personen, die mehr Platz zur Verfügung haben, können diesen jedoch auch nutzen. Abgesehen davon muss der VR-Spielende sich nicht im Ring um den Berg bewegen, da man den Berg augenscheinlich drehen kann.
 
 \subsection{Interaktionen}
-Zitat
+Die Interaktionen des VR-Spielenden müssen sich real anfühlen, um die Immersion nicht zu brechen. Deswegen verwenden wir in Tricks ´n´ Treats physikalische Hände, die nicht durch Objekte durch transformieren können. Außerdem vibriert die jeweilige Hand etwas, sobald man versucht durch ein Objekt zu greifen. Damit wird das Gefühl der Berührung ersetzt, dass mit den meisten VR-Controllern nicht umsetzbar ist.
+
+\subsubsection{Interaktion mit Knöpfen und Items}
+Der VR-Spielende kann Zauberkugeln aufheben. Wenn diese aufgehoben werden, nimmt die virtuelle Hand eine greifende Pose ein. Um die Zauberkugel nun gegen die PC-Spielenden zu wirken, kann der VR-Spielende diese Kugel auf dem Berg platzieren, indem er diese auf die Oberfläche schlagt. Man kann die Interaktion damit vergleichen, ein Ei auf einen Tisch zu schlagen. Um mit Knöpfen zu interagieren, gibt es zwei Methoden. Die erste Methode ist, den Knopf so zu machen, dass man nur mit der Hand in die Nähe einer unsichtbaren Zone kommen muss, um den Knopf hineinzudrücken. Die zweite und auch immersivere Methode ist, einen physikalischen Knopf zu implementieren, der vom Gefühl, näher an einen realen Knopfdruck heranrankommt.
