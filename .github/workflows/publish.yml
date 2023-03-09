@@ -15,3 +15,5 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           files: |
             LaTeX/DA_Snowboards/_DABA.TEX
+        env:
+          TEXINPUTS: ".:.//:"
