@@ -34,7 +34,7 @@ Der Charakter kann zusätzlich, um besser ausweichen zu können, vorwärts und r
 Um möglichst viele Fps (Bilder pro Sekunde/Frames per second) zu erreichen und das Spiel auch auf älteren Systemen spielbar zu machen, muss es gut optimiert sein. Die Möglichkeiten zur Rechenoptimierung aus \ref{simon_performance}, die verwendet wurden und die, die nicht implementierbar waren sind anbei zu sehen.
 
 \subsection{Level of Detail}
-Dadurch, dass sich mehrere Kameras im selben Raum befinden, ist die Berechnung des Level of Detail für mehrere Kameras gleichzeitig zu rechenintensiv und bietet deshalb keine sichtbare Verbesserung.
+Die Unity-Engine unterstützt Level of Detail per Camera. Das heißt, dass jede Kamera selbst berechnet, welche Meshqualität gerendert werden soll. In Tricks ´n´ Treats verwenden wir diese Technik nicht, weil wir durch andere Optimierungen genug Rechenleistung sparen können. Sollte sich der Spielumfang in Zukunft ändern, wird es Essenziell sein Level of Detail zu implementieren.
 
 \subsection{Culling}
 Dadurch dass die PC und VR-Kamera gleichzeitig Rendern kann Culling nur begrenzt angewendet werden. Occlusion Culling könnte durch eigenen Code, der anhand des View Frustrums die Objekte prüft und dementsprechend cullt implementiert werden. Eine Frage, die vorab gestellt werden muss, ist jedoch: Entsteht dadurch eine nennenswerte Verbesserung? Man kann nur testen, ob der Code nicht mehr Rechenleistung braucht als der Rendering Prozess der zusätzlichen Objekte. Da wir durch andere Maßnahmen genug optimiert haben, wurde die Zeit, um in diesem Bereich zu forschen anders verwendet.
