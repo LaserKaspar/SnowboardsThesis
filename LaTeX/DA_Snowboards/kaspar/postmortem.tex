@@ -8,9 +8,9 @@ Durch Playtests wurden einige Mängel im Design gefunden, die dann auch rechtzei
 
 \subsubsection{Feedback}
 
-Einige Dinge, auf die wir durch Playtests aufmerksam wurden, wurden bereits implementiert. Darunter ist war auch mehr Feedback für tote Spielende und wann sie wieder Respawnen können. Neben dem initialen Feedback für tot und respawn, ist es auch wichtig den Spielenden über eine gewisse Zeit hinweg zu sagen, dass sie eine bestimmte Aktion ausführen können, sollten sie den ersten "`Tip"' übersehen haben, hier haben wir uns für eine leichte Vibration des Controllers entschieden (Diese Idee kam nur dank des Feedbacks unserer Playtester). Neben dem Feedback ist es manchmal aber auch wichtig den Spielenden Zeit zu geben, und sie selbstständig entscheiden zu lassen wann eine Aktion ausgeführt wird, anstatt ihnen einfach zu sagen "`Jetzt!"'. Neben Feedback ist also auch Interaktion wichtig.
+Einige Dinge, auf die wir durch Playtests aufmerksam wurden, wurden bereits implementiert. Darunter ist auch mehr Feedback für tote Spielende und wann sie wieder Respawnen können. Neben dem initialen Feedback für Tot und Respawn, ist es auch wichtig den Spielenden über eine gewisse Zeit hinweg zu sagen, dass sie eine bestimmte Aktion ausführen können, sollten sie den ersten "`Tip"' übersehen haben. Hier haben wir uns für eine leichte Vibration des Controllers entschieden (Diese Idee kam nur dank des Feedbacks unserer Playtester). Es ist manchmal aber auch wichtig den Spielenden Zeit zu geben, und sie selbstständig entscheiden zu lassen wann eine Aktion ausgeführt wird, anstatt ihnen einfach zu sagen "`Jetzt!"'. Neben Feedback ist also auch Agency (Die Möglichkeit der Spielenden Einfluss auf das Geschehen in der Spielwelt zu haben\cite[S.98]{_game_design_workshop}) wichtig.
 
-Eine weitere Sache, auf die wir bei Playtests aufmerksam wurden, war die Spielenden mit Spells interagieren. Anfangs wurden sich hierüber leider weniger Gedanken gemacht. Es wurde jedoch schnell klar, dass viele Spielende nicht intrinsisch herausfinden konnten, wie Spells zu aktivieren sind. Es wurden verschiedene Möglichkeiten ausprobiert, um es klarer zu gestalten. Das ursprüngliche Aktivieren per Knopfdruck wurde durch ein Collider basiertes aktivieren ausgetauscht. Schlussendlich wurde sogar der Collider der gehaltenen Spells zu schrumpfen, um dem Spieler die nötige Genauigkeit zu geben wo der Spell platziert werden soll.
+Eine weitere Sache, auf die wir bei Playtests aufmerksam wurden, war wie die Spielenden mit Spells interagieren. Lieder wurde darüber anfangs weniger nachgedacht. Es wurde jedoch schnell klar, dass viele Spielende nicht intrinsisch herausfinden konnten, wie Spells zu aktivieren sind. Es wurden verschiedene Möglichkeiten ausprobiert, um es klarer zu gestalten. Das ursprüngliche Aktivieren per Knopfdruck wurde durch ein Collider basiertes aktivieren ausgetauscht. Schlussendlich wurde sogar der Collider der gehaltenen Spells verkleinert, um den Spielenden die nötige Genauigkeit bei der Platzierung der Spells zu geben.
 
 \subsubsection{Balancing}
 
@@ -18,10 +18,13 @@ Außerdem halfen Playtests enorm beim Balancing des Spieles. Die ersten Settings
 
 \subsubsection{Positives}
 
-Neben den Dingen, die nicht gut funktioniert haben, hat das Konzept der Krone, wie erwartet, sehr gut für Teamwork innerhalb der Gruppe gesorgt. Auch die Tricks und "`Positive Obstacles"' [\ref{_positive_obstacles}] haben den gewünschten Effekt, riskantes fahren zu fördern erzieht. Die verschiedenen Spell-Typen wurden von den VR-Spielenden, wie erwartet, kombiniert, da sie gemeinsam einen größeren Effekt auf die Snowboarder hatten.
+Neben den Dingen, die nicht gut funktioniert haben, hat das Konzept der Krone, wie erwartet, sehr gut für Teamwork innerhalb der Gruppe gesorgt. Auch die Tricks und \emph{Positive Obstacles}\ref{_positive_obstacles} haben den gewünschten Effekt, riskantes fahren zu fördern erzieht. Die verschiedenen Spell-Typen wurden von den VR-Spielenden, wie erwartet, kombiniert, da sie gemeinsam einen größeren Effekt auf die Snowboarder hatten.
+
+\section{Kommunikation}
+[Hier fehlt noch etwas]
 
 \section{Zukunft des Projektes}
 
-Sollte das Projekt weiterentwickelt werden, ist vor allem mehr auf das Design der Interaktionen des VR-Spielenden zu achten. Derzeit sind alle Interaktionen sehr statisch und es sollten, um das Balancing der Spells für die Spielenden verständlicher zu machen [auch hier wieder internal attribution], komplexere Interaktionen \ref{_balancing_interaction} implementiert werden. Leider waren die dafür benötigten Systeme zu komplex, um sie in der kurzen verbleibenden Zeit noch umzusetzen, und es wurde mehr Zeit in das Polishing von dem was bereits da war investiert.
+Sollte das Projekt weiterentwickelt werden, ist vor allem mehr auf das Design der Interaktionen des VR-Spielenden zu achten. Derzeit sind alle Interaktionen sehr statisch und es sollten, um das Balancing der Spells für die Spielenden verständlicher und auch abhängiger von den Skills des Magiers zu machen, komplexere Interaktionen (siehe \ref{_balancing_interaction}) implementiert werden. Leider waren die dafür benötigten Systeme zu komplex, um sie in der kurzen verbleibenden Zeit noch umzusetzen, und es wurde mehr Zeit in das Polishing von dem was bereits da war investiert.
 
 Grundsätzlich war der Grundgedanke, so wenig wie möglich zu Implementieren, dafür mehr darauf zu achten das Implementierte möglichst zu perfektionieren, eine der besten Entscheidungen im Designprozess.
