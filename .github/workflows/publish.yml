@@ -16,5 +16,7 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           files: |
             LaTeX/DA_Snowboards/_DABA.TEX
+          extra_fonts: |
+            LaTeX/DA_Snowboards/fonts/segoeui.ttf
         env:
           TEXINPUTS: ".:.//:"
