@@ -1,9 +1,5 @@
 \chapter{Implementation}
 
-\section{Konzept}
-
-[Konzept vom Spiel, kommt an den Anfang der gesamten Arbeit]
-
 \section{Was muss bei VR-Game-Design beachtet werden?}
 
 VR-Spiele bringen einige Limitationen mit sich, die es zu überwinden gilt. Bei der ersten Limitation handelt es sich um die Größe des Play-Spaces, also jenem Physischem Raum, in dem sich VR-Spielende aufhalten. Das zweite Problem ist die Reisekrankheit (Motion-Sickness, eine körperliche Reaktion auf ungewöhnliche/unzusammenhängende Bewegung\cite[S. 533]{_art_of_gamedesign}), vor allem bei Party-Spielen muss ihr Einfluss möglichst gering sein, da das Spiel von einer breiten Masse gespielt werden können soll. Die Reisekrankheit limitiert die Bewegungsmöglichkeiten der Spielenden und diese wiederum die Größe und Gestaltung der virtuellen Umgebung.
@@ -16,7 +12,7 @@ Das im Zuge dieser Arbeit entwickelte Spiel soll eine bestimmte Stimmung erzeuge
 \subsection{Core Pillars}
 
 \subsubsection{Fast but Strategic}
-Das Ziel des Spiels soll es nicht sein, möglichst schnell Spells zu aktivieren. Es muss etwas Strategie dahinter sein, damit Spielende gefordert werden und eine wertvolle Entscheidung treffen können. Da es sich um ein Party-Spiel und kein Strategie-Spiel handelt, sollte es möglich sein, schnelle Entscheidungen zu treffen. Um das zu ermöglichen, muss das Spell-System vergebend sein, und muss sich auf die aktuelle Spielsituation anpassen können\ref{_rubberbanding}. 
+Das Ziel des Spiels soll es nicht sein, möglichst schnell Spells zu aktivieren. Es muss etwas Strategie dahinter sein, damit Spielende gefordert werden und eine wertvolle Entscheidung treffen können. Da es sich um ein Party-Spiel und kein Strategie-Spiel handelt, sollte es möglich sein, schnelle Entscheidungen zu treffen. Um das zu ermöglichen, muss das Spell-System vergebend sein, und muss sich auf die aktuelle Spielsituation anpassen können (mehr dazu in Kapitel \ref{_rubberbanding}). 
 
 \subsubsection{Teamwork \& Kommunikation}
 Außerdem muss Strategie und Absprache zwischen den PC-Spielenden angeregt werden, um weiter das Teamwork der Gruppe zu fördern. Wie am Anfang der Arbeit bereits definiert, braucht Teamwork ein gemeinsames Ziel. Das Ende der Strecke kommt hier recht schnell in den Sinn, allerdings ist das allein nicht genug, um Kommunikation zwischen den Spielenden zu erzeugen, da es zu weit in der Zukunft liegt, und sich nicht verändert. Eine Lösung, und mögliche Lösungsansätze, für dieses Problem werden in Kapitel \ref{_teamwork_erzeugen} besprochen.
@@ -31,16 +27,16 @@ Da es sich bei dem Projekt um ein asymmetrisches Spiel handelt, wurden für die 
 \subsubsection{Snowboarder (PC)}
 Für die Snowboarder sind folgende zwei Experiences am wichtigsten: die (Snowboarding-) Action und das Teamwork der Gruppe. Mithilfe der "`Lens of Essential Experience"'\cite[S. 55]{_art_of_gamedesign} kann versucht werden, diese Experiences zu erzeugen.
 
-Um das Gefühl "`Snowboarden"' akkurat wiederzugeben wurden 3 wichtige Komponenten gefunden: Tricks, Stürzen und Beharrlichkeit. Man könnte auch sagen, dass die Kälte ein Teil des Snowboardens darstellt, jedoch wurde dagegen entschieden, da es dem Core Pillar "`God-Like"' widerspricht, wenn sich die Snowboarder über die Körpertemperatur ihrer Charaktere Gedanken machen müssen.
+Um das Gefühl "`Snowboarden"' akkurat wiederzugeben wurden drei wichtige Komponenten gefunden: Tricks, Stürzen und Beharrlichkeit. Man könnte auch sagen, dass die Kälte ein Teil des Snowboardens darstellt, jedoch wurde dagegen entschieden, da es dem Core Pillar "`God-Like"' widerspricht, wenn sich die Snowboarder über die Körpertemperatur ihrer Charaktere Gedanken machen müssen.
 
 Eine weitere wichtige Experience der Snowboarder ist das Teamwork, sogar so wichtig, dass es, wie oben erwähnt, zu einem der Core Pillars gemacht wurde. Wie Teamwork erzeugt werden soll, wird in Kapitel \ref{_teamwork_erzeugen} behandelt.
 
 \subsubsection{Magier (VR)}
 Für den Magier sind die folgenden zwei Experiences am wichtigsten: Macht und Multitasking. 
 
-Diese, im Konkreten Göttliche/Magische Kraft, soll vor allem durch das Zaubern, also den Spells (\ref{_spell_design}]), und die Aneinanderreihung und taktische ("`Fast but Strategic"') Platzierung dieser erzeugt werden. Sie wird auch über den visuellen Größenunterschied der Snowboarder und dem Magier dargestellt.
+Diese Göttliche/Magische Kraft soll vor allem durch das Zaubern, also den Spells (siehe \ref{_spell_design}]), und die Aneinanderreihung und taktische ("`Fast but Strategic"') Platzierung dieser erzeugt werden. Sie wird auch über den visuellen Größenunterschied der Snowboarder und dem Magier dargestellt.
 
-Multitasking ist vor allem im Bereich der Interaktionen wichtig, der Magier sollte immer schon bevor er einen Spell platziert hat, darüber nachdenken, was der nächste Zug sein wird. Um des zu erreichen, sollten Spells nicht immer sofort verfügbar sein. Ziel ist es dadurch mehr Strategie in das Spiel zu bringen.
+Multitasking ist vor allem im Bereich der Interaktionen wichtig, der Magier sollte immer schon bevor er einen Spell platziert hat, darüber nachdenken, was der nächste Zug sein wird. Um das zu erreichen, sollten Spells nicht immer sofort verfügbar sein. Ziel ist es dadurch mehr Strategie in das Spiel zu bringen.
 
 \section{Zusammentreffen beider Welten (PC + VR)}
 
@@ -50,18 +46,18 @@ Der erste Punkt, und auch Grundstein für das restliche Design, ist das Konzept 
 \subsubsection{Limitationen}
 Der VR-Spielende muss die Möglichkeit haben, zu jedem gegebenen Zeitpunkt, mit einem Großteil der Strecke zu interagieren (Fallen platzieren, etc.). Außerdem ist es wichtig, dass sich Spells immer in Reichweite befinden. Die Strecke muss jedoch auch (aufgrund anderer technischer Limitationen) zu jedem Zeitpunkt komplett geladen und sichtbar sein.
 
-Das Streckendesign muss es zulassen, die Strecke so anzupassen, dass eine Fahrt von oben nach unten ca. 3 Minuten dauert. Des Weiteren muss die Breite der Strecke genug Platz, um Hindernissen auszuweichen, und den Spielenden eine gewissen Toleranz für Fehler beim Lenken der Snowboarder lassen.
+Das Streckendesign muss es zulassen, die Strecke so anzupassen, dass eine Fahrt von oben nach unten ca. drei Minuten dauert. Des Weiteren muss die Breite der Strecke genug Platz, um Hindernissen auszuweichen, und den Spielenden eine gewissen Toleranz für Fehler beim Lenken der Snowboarder lassen.
 
 Zur Auswahl stehen drei verschiedene Streckendesigns, deren vor und Nachteile behandelt werden und begründet wird, warum schlussendlich für Streckendesign Nr. 3 entschieden wurde. Alle drei Designs versuchen die Bewegung des VR-Spielenden zu vermeiden, um das Gefühl der Reisekrankheit zu mindern.
 
 \subsubsection{Designoption 1 - Spirale}
-Die Snowboarder fahren, in diesem Design, in einer Spirale um den VR-Spielenden herum. Es ermöglicht eine freie Strecke für die Snowboarder, jedoch ist wenig Platz für VR-Spielende. Dieses Design ist auch sehr unrealistisch, da es sich hier nicht um eine klassische Ski-Strecke handeln kann, da Teile "`Schweben". Dieser Effekt wird weiters verstärkt, da es sich für die Spielenden so anfühlt, als wären sie in einer Wasserrutsche. Das widerspricht alles der Target-Experience des Snowboardens.
+Die Snowboarder fahren, in diesem Design, in einer Spirale um den VR-Spielenden herum. Es ermöglicht eine freie Strecke für die Snowboarder, jedoch ist wenig Platz für VR-Spielende. Dieses Design ist auch sehr unrealistisch, da es sich hier nicht um eine klassische Ski-Strecke handeln kann, da Teile "`Schweben". Dieser Effekt wird weiters verstärkt, da es sich für die Spielenden so anfühlt, als wären sie in einer Wasserrutsche. Das widerspricht der Target-Experience des Snowboardens.
 
 \subsubsection{Designoption 2 - Kristallkugel}
 Dieses Design bringt auf der Seite der Snowboarder und des VR-Spielenden deutliche Verbesserungen. Da VR-Spielende durch eine Kristallkugel auf die Snowboarder herabschaut, kann die Strecke unglaublich frei sein, es kann harte Kurven und Richtungswechsel geben. Der VR-Spielende, hat die Möglichkeit, einen eigenen Raum zu bekommen, in dem der Zugang zu den Spells einfach ist. Der größte Nachteil ist hier die Technik, die im Hintergrund gebraucht wird. Technisch ist es sehr schwer umzusetzen, da die Welten des VR-Spielenden und der Snowboarder voneinander getrennt und über die Kristallkugel wieder zusammengebracht werden müssen.
 
 \subsubsection{Designoption 3 - Berg}
-Die Idee des Berges wurde am Anfang etwas vernachlässigt, da es sehr eingeschränkt erschien. Jedoch bringt der Berg neben der technisch um einiges leichteren Umsetzung wieder etwas Realismus und eine schöne Atmosphäre ins Spiel, die die Experience des Snowboardens verstärken kann. Auf diesem, aus der Sicht des VR-Spielenden, kleinen Berg, in der Mitte des VR-Play-Spaces, können die Snowboarder spiralförmig hinunterfahren. Wie bei der Spirale hat man hier aber auch das Problem, dass die Snowboarder permanent in die Kurve lenken müssen, dieses Problem wird in Kapitel \ref{_playercontroller} weiter behandelt. Der Berg kann automatisch mit den Snowboardern mitgedreht werden, damit sie immer im Sichtfeld des Magiers sind. Der Magier soll aber auch eine Möglichkeit haben diese Drehung zu überschreiben, damit auch Teile der Strecke die außerhalb des interagierbaren Bereiches liegen beeinflussen kann.
+Die Idee des Berges wurde am Anfang etwas vernachlässigt, da sie sehr eingeschränkt erschien. Jedoch bringt der Berg neben der technisch um einiges leichteren Umsetzung wieder etwas Realismus und eine schöne Atmosphäre ins Spiel, die die Experience des Snowboardens verstärken kann. Auf diesem, aus der Sicht des VR-Spielenden, kleinen Berg, in der Mitte des VR-Play-Spaces, können die Snowboarder spiralförmig hinunterfahren. Wie bei der Spirale hat man hier aber auch das Problem, dass die Snowboarder permanent in die Kurve lenken müssen, dieses Problem wird in Kapitel \ref{_playercontroller} weiter behandelt. Der Berg kann automatisch mit den Snowboardern mitgedreht werden, damit sie immer im Sichtfeld des Magiers sind. Der Magier soll aber auch eine Möglichkeit haben diese Drehung zu überschreiben, damit er auch Teile der Strecke die außerhalb des interagierbaren Bereiches liegen beeinflussen kann.
 
 \subsection{Interaktionsdesign}
 Da der Wettbewerb zwischen PC und VR asymmetrisch ist, müssen beide Parteien die jeweils andere Seite beeinflussen können, um es interessant zu machen. Der Magier muss durch Spells und andere Tools die Snowboarder behindern können und die Snowboarder müssen Einfluss auf die Welt des VR-Spieleden haben.
@@ -79,10 +75,10 @@ Dieser Spell-Typ braucht eine gewisse Zeit, um sich zu aktivieren. Somit müssen
 Das Ziel von Long-Term-Spells ist es den Spielenden die Möglichkeit zu geben, etwas strategischer zu Spielen. Sie können nur begrenzt, und an vordefinierten orten aktiviert werden. Ziel ist es Spielende dazu zu bewegen, zu Beginn einer Runde abzuwägen einen Long-Term-Spell einzusetzen, und dafür weniger Instant- und Short-Term-Spells, oder darauf zu verzichten, um flexibler zu sein. Beispiele hierfür wären das Absperren von gewissen Streckenteilen, oder das zum Einsturz bringen von Bäumen oder Geröll auf der Strecke.
 
 \paragraph{Balancing-Cooldown}
-Die Anzahl der Spells, welche der Magier verwenden kann, muss limitiert sein. Der einfachste Weg, um Spells zu limitieren, ist ein Cooldown, welcher verhindert, dass zwei Spells direkt nacheinander platziert werden können. Es wird jedoch bei diesem System schnell dazu kommen, dass VR-Spielende immer den "`Stärksten"'' Spell nehmen, und es dadurch schwer zu balancen ist.
+Die Anzahl der Spells, welche der Magier verwenden kann, muss limitiert sein. Der einfachste Weg, um Spells zu limitieren, ist ein Cooldown, welcher verhindert, dass zwei Spells direkt nacheinander platziert werden können. Es wird jedoch bei diesem System schnell dazu kommen, dass VR-Spielende immer den "`Stärksten"' Spell nehmen, und es dadurch schwer zu balancen ist.
 
 \paragraph{Balancing-Mana\label{_mana}}
-Bevor ein Spell platziert werden kann, muss er in einen Mana-Kessel getaucht werden, um ihn zu aktivieren. Dieser Mana-Kessel kann nur eine begrenzte Menge an Mana halten und befüllt sich über den Verlauf des Spieles von selbst. Ein Mana-Kessel bietet gleich mehrere Vorteile: Balancing und Physische-Interaktion. Mana kann dabei helfen Spells untereinander zu balancen, indem ihre Kosten erhöht oder verringert werden. Außerdem fügt der Kessel einen Zwischenschritt hinzu, das macht die Interaktion komplexer und interessanter. Sobald ein Spell einmal aufgeladen ist, ist man dazu gezwungen ist ihn auch zu platzieren, da er sonst seine Ladung wieder verliert.
+Bevor ein Spell platziert werden kann, muss er in einen Mana-Kessel getaucht werden, um ihn zu aktivieren. Dieser Mana-Kessel kann nur eine begrenzte Menge an Mana halten und befüllt sich über den Verlauf des Spieles von selbst. Ein Mana-Kessel bietet gleich mehrere Vorteile: Balancing und Physische-Interaktion. Mana kann dabei helfen Spells untereinander zu balancen, indem ihre Kosten erhöht oder verringert werden. Außerdem fügt der Kessel einen Zwischenschritt hinzu, das macht die Interaktion komplexer und interessanter. Sobald ein Spell einmal aufgeladen ist, ist man dazu gezwungen ihn auch zu platzieren, da er sonst seine Ladung wieder verliert.
 
 Die Anzahl der Spielenden, die noch im Rennen sind, könnte sich auf die Mana-Regeneration auswirken, so entsteht ein negativer Feedbackloop (siehe \ref{_rubberbanding}), es wird für den Magier schwieriger zu gewinnen, wenn er kurz davor ist den letzten Snowboarder zu Fall zu bringen. Das erzeugt einen weiteren Pacing Spike, wie bei einem Bosskampf, am Ende einer Runde und hat einen automatischen Balancing\cite[S. 296]{_game_design_workshop}-Effekt.
 
@@ -127,4 +123,4 @@ Der erste Spielende hält immer die Krone. Wenn die Krone länger als eine gewis
 Eine gemeinsame Aktion wäre beispielsweise, dass alle Snowboarder zur selben Zeit Springen oder einen Trick ausführen. Das würde wieder ein großes Risiko mit sich bringen, da alle gleichzeitig sterben könnten.
 
 \subsubsection{Negativer Feedbackloop\label{_rubberbanding}}
-Ein negativer Feedbackloop versucht Änderungen entgegen zu steuern um so ein System stabil zu halten\cite[S.133]{_game_design_workshop}. Snowboarder, die weiter hinten sind, sollten schneller werden, damit sie mit der Gruppe mithalten können. Wie in \ref{_mana} angesprochen, ist es auch wichtig PC und VR untereinander zu balancen. Neben dem bereits angesprochenen, gibt es noch folgende weitere Möglichkeiten. Ausgeschiedene Spielende könnten den VR-Spieler daran hindern weitere Spells zu aktivieren oder gute Sicht auf die Strecke durch z.B. Nebel verhindern. Spells könnten auch dynamisch gestärkt oder geschwächt werden, indem man deren Range oder Dauer verändert.
+Ein negativer Feedbackloop versucht Änderungen entgegen zu steuern um so ein System stabil zu halten\cite[S.133]{_game_design_workshop}. Snowboarder, die weiter hinten sind, sollten schneller werden, damit sie mit der Gruppe mithalten können. Wie in \ref{_mana} angesprochen, ist es auch wichtig PC und VR untereinander zu balancen. Neben dem bereits angesprochenen, gibt es noch folgende weitere Möglichkeiten: Ausgeschiedene Spielende könnten den VR-Spieler daran hindern weitere Spells zu aktivieren oder gute Sicht auf die Strecke durch z.B. Nebel verhindern. Spells könnten auch dynamisch gestärkt oder geschwächt werden, indem man deren Range oder Dauer verändert.
