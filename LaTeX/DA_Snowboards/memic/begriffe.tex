@@ -1,7 +1,5 @@
 \chapter{Überblick über die Materie}
 
-// es fehlt eine Einleitung
-
 \section{Performance Optimierung}
 
 Die Performance Optimierung lässt sich allgemein als der Prozess der Verbesserung einer getätigten Leistung beschreiben. Mit dieser Definition lässt sich ein schnellerer Weg von Punkt A zu Punkt B als eine Weg-Zeit Optimierung darstellen. In der Computer Technik beschreibt die Performance Optimierung daher grundsätzlich, dass ein Computer System oder eine Computer Software in bestimmten Bereichen effektiver bzw. mit weniger Rechenleistung läuft. Für Computerspiele ist die Performance Optimierung ein essenzieller Teil der Spiele-Produktion vor der Veröffentlichung. Code, In-Game Physics, Game-Assets und allgemeine Grafik Optimierung bilden damit den Überbegriff: Performance Optimierung. Dies erklärt dennoch nicht deutlich genug, was genau die Optimierung von 3D-Assets bedeutet und wird im Folgenden konkret erklärt.\cite[648]{_advances}
@@ -12,14 +10,14 @@ Schlechte Performance ist eindeutig erkennbar und kann in Spielen in zahlreichen
 
 \subsection{Was löst schlechte Performance aus?}
 
-Ein Videospiel ist nichts weiter als eine Tätigkeit, welche vom Computer getätigt werden muss und folglich auch Rechenleistung nutzen muss. Die CPU (= Central Processing Unit) und GPU (= Graphics Processing Unit) benötigen Ressourcen, um Prozesse auf dem Computer laufen zu lassen. Genauso ist auch der RAM (=Random Access Memory) zu beachten. Die Überlastung dieser Komponenten führt daher zu verschlechterter Performance. Es ist wichtig anzumerken, dass die Überlastung sowohl durch die Entwickler als auch durch die Nutzer entstehen kann. Spiele können nur bis zu einem gewissen Grad auf eine bestimmte Mindestanforderung optimiert werden, wenn jedoch der Computer zu einer veralteten Generation angehört, wird jegliche Optimierung sinnlos sein. Die Entwickler sind zuständig für alle ausgeführten Prozesse während der Laufzeit des Spiels und deswegen in vielen Instanzen hauptverantwortlich für ein schlecht laufendes Spiel.
+Damit das Spiel auf einem Computer laufen kann, muss der Computer Arbeit verrichten, welche Rechenleistung benötigt. Die CPU (= Central Processing Unit) und GPU (= Graphics Processing Unit) benötigen Ressourcen, um Prozesse auf dem Computer laufen zu lassen. Genauso ist auch der RAM (=Random Access Memory) zu beachten. Die Überlastung dieser Komponenten führt daher zu verschlechterter Performance. Es ist wichtig anzumerken, dass die Überlastung sowohl durch die Entwickler als auch durch die Nutzer entstehen kann. Spiele können nur bis zu einem gewissen Grad auf eine bestimmte Mindestanforderung optimiert werden, wenn jedoch der Computer zu einer veralteten Generation angehört, wird jegliche Optimierung sinnlos sein. Die Entwickler sind zuständig für alle ausgeführten Prozesse während der Laufzeit des Spiels und deswegen in vielen Instanzen hauptverantwortlich für ein schlecht laufendes Spiel.
 
 \section{Rendering \& die VR Kamera}
 
 
 \subsection{Rendering}
 
-Rendering ist ein Fachausdruck aus der Computer Grafik. Rendering umschreibt jenen technischen Prozess, mit welchem die GPU  und CPU durch Rohdaten ein Bild auf einem Bildschirm generiert. Rendering ist daher Grund, weshalb unser Computer während der gesamten Laufzeit ein Bild darstellen kann. Daraus folgt, dass jedes 3D-Assets und ebenso jedes Spiel mittels Rendering ein Bild anzeigt. In Spielen und 3D-Modeling wird zwischen zwei wichtigen Arten von Rendering unterschieden:
+Rendering ist ein Fachausdruck aus der Computer-Grafik. Rendering umschreibt jenen technischen Prozess, mit welchem die GPU  und CPU durch Rohdaten ein Bild auf einem Bildschirm generiert. Rendering ist daher Grund, weshalb unser Computer während der gesamten Laufzeit ein Bild darstellen kann. Daraus folgt, dass jedes 3D-Assets und ebenso jedes Spiel mittels Rendering ein Bild anzeigt. In Spielen und 3D-Modeling wird zwischen zwei wichtigen Arten von Rendering unterschieden:
 Real-Time Rendering: Hier handelt es sich um alle Rendering-Prozesse, in Echtzeit (Realtime) bzw. während der Laufzeit berechnet werden und deswegen für interaktive Ereignisse nützlich sind.
 Offline-Rendering ist das Gegenstück zum Real-Time-Rendering. Hierbei wird ein Bild vorzeitig fertig berechnet und erspart während der Laufzeit einiges an Leistung.
 Wie bereits erklärt, kann ein Spiel ohne Rendering kein Bild ausgeben. Damit ein Bild ausgegeben werden kann, wird in Game-Engines, wie die Unity-Engine, eine virtuelle Kamera benötigt. Diese virtuelle Kamera ist schlussendlich die Perspektive , aus welcher Nutzer das Spiel erleben werden. Die Perspektive kann von Spiel zu Spiel variieren und bestimmt die Stimmung und das Erlebnis des Spieles. Der tatsächliche Rendering-Prozess ist dabei nicht abhängig von der Kamera und bleibt in den meisten Umständen gleich.
@@ -82,7 +80,6 @@ Sie stellen einen Punkt dar und werden mittels Vektors beschrieben. Damit könne
 \end{figure}
 
 Es entsteht aus 2 Punkten und bildet damit eine Linie/Kante
-//vielleicht noch mehr Ausarbeitung
 
 \subsubsection{Face (Polygon)} 
 
@@ -102,16 +99,19 @@ Es besteht aus mindestens 3 verbunden Edges, die eine Fläche bilden.
 	\caption{Tri, Quad \& N-Gon}
 \end{figure}
 
-Streng genommen gibt es kein Maximum an Edges und Vertices, die ein Face besitzen kann. Jedoch sind zwei Arten von Polygonen besser geeignet als andere. Hierbei spricht man fachlich von Quads (Vierecken) und Tris (Dreiecken). Überschreitet ein Face die Anzahl an Vertices eines Quads, also vier Vertices, spricht man von einem N-Gon. N-Gone unterscheiden sich vom Rendering-Prozess nicht von allen anderen Polygonen, jedoch führen N-Gone meist zu irritierenden Rendering-Ergebnissen und anderen grafischen Fehlern. Weitführend sie die meisten 3D-Softwares nicht darauf ausgelegt, mit N-Gonen zu arbeiten, da der Workflow in 3D-Modeling Programmen auf optimierte Topologie basiert.
+Streng genommen gibt es kein Maximum an Edges und Vertices, die ein Face besitzen kann. Jedoch sind zwei Arten von Polygonen besser geeignet als andere. Hierbei spricht man fachlich von Quads (Vierecken) und Tris (Dreiecken). Überschreitet ein Face die Anzahl an Vertices eines Quads, also vier Vertices, spricht man von einem N-Gon. N-Gons unterscheiden sich vom Rendering-Prozess nicht von allen anderen Polygonen, jedoch führen N-Gons meist zu irritierenden Rendering-Ergebnissen und anderen grafischen Fehlern. Weiterführend sind die meisten 3D-Softwares nicht darauf ausgelegt, mit N-Gons zu arbeiten, da der Workflow in 3D-Modeling Programmen auf optimierte Topologie basiert.
 Bevor ein Mesh exportiert wird, wird die Topologie des Mesh meist aus Quads bestehen, da das Model bei notwendigen Veränderungen leichter bearbeitbar ist. Sobald das Asset in die Game-Engine importiert wurde, konvertiert die Engine jegliche Quads zu Tris. Dies liegt daran, dass jedes Quad in zwei Tris aufgeteilt werden kann. Der Vorteil beim Rendering dabei ist, das die Fläche eines Dreiecks planar ist, im Gegenzug zu dem eines Quads. Dies bietet den Vorteil, dass nur die einfachste geometrische Fläche gerendert werden muss und damit auch den Vorteil, dass keine Probleme beim Shading des Models vorkommen.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{images/memic/Ngon_Shading}
-	\caption{Shading-Probleme bei N-Gonen}
+	\caption{Shading-Probleme bei N-Gons}
 \end{figure}
 
+
 \subsection{Die Wichtigkeit von Performance Optimierung in Video Spielen}
+
+Dr Davide Aversa und Chris Dickinson, erläuterten die Wichtigkeit der Performance folglich:
 
 "`The goals of performance optimization are deeply entwined with user experience. Poorly optimized games can result in low frame rates, freezes, crashes, input lag, long loading times, inconsistent and jittery runtime behaviour, physics engine breakdowns, and even excessively high battery power consumption (an often-neglected metric for mobile devices). Having just one of these issues can be a game developer's worst nightmare as reviews will tend to focus on the one thing that we did poorly, ignoring all the things that we did well."'\cite[S. 17]{_unity_game_optimization}
 
@@ -184,7 +184,7 @@ Die UV-Map besteht dabei nicht aus einer einzigen großen Form, sondern wird mei
 	\caption{Beispiel für eine UV-Map}
 \end{figure}
 
-\subsection{Texture Atlassing}
+\subsection{Texture Atlasing}
 
 \begin{figure}[H]
 	\centering
@@ -192,8 +192,8 @@ Die UV-Map besteht dabei nicht aus einer einzigen großen Form, sondern wird mei
 \end{figure}
 
 
-Texture Atlasses ist eine Technik, welche für reduzierte Draw Calls und Unity-Batching oft eingesetzt wird. Da dieser Teil außerhalb des Arbeitsbereiches eines 3D-Artists ist, ist der technische Aspekt für die Umsetzung eines Textur-Atlasses irrelevant. Einzig zu beachten ist, dass durch den Textur Atlasse weniger Draw Calls hervorgerufen werden, wovon auch die Performance profitiert.
-Die Aufgabe eines Textur-Atlasses ist es, eine Sammlung an kleineren Texturen auf eine einzige größere Textur zu bringen. Diese Technik ist nur dann anzuwenden, wenn alle Materials denselben Shader benutzen. In Essenz werden die einzelnen UV-Islands sämtlicher Objekte auf einer UV-Map organisiert und schließlich texturiert. Hiermit sparen sich die Entwickler einiges an Speicherplatz und können im Falle von kleineren Objekten eine größere Auflösung erhalten. Nachteil dieser Methode ist die spätere Bearbeitung der Textur.\cite[S.146]{_unity_game_optimization}
+Texture Atlases ist eine Technik, welche für reduzierte Draw Calls und Unity-Batching oft eingesetzt wird. Da dieser Teil außerhalb des Arbeitsbereiches eines 3D-Artists ist, ist der technische Aspekt für die Umsetzung eines Texture Atlases irrelevant. Einzig zu beachten ist, dass durch den Texture-Atlas weniger Draw Calls hervorgerufen werden, wovon auch die Performance profitiert.
+Die Aufgabe eines Texture Atlases ist es, eine Sammlung an kleineren Texturen auf eine einzige größere Textur zu bringen. Diese Technik ist nur dann anzuwenden, wenn alle Materials denselben Shader benutzen. In Essenz werden die einzelnen UV-Islands sämtlicher Objekte auf einer UV-Map organisiert und schließlich texturiert. Hiermit sparen sich die Entwickler einiges an Speicherplatz und können im Falle von kleineren Objekten eine größere Auflösung erhalten. Nachteil dieser Methode ist die spätere Bearbeitung der Textur.\cite[S.146]{_unity_game_optimization}
 
 \subsection{Billboarding}
 
@@ -311,20 +311,20 @@ Billboarding allein würde in Tricks ´n´ Treats keinen wirklichen Vorteil biet
 
 \subsubsection{Handgemalte Texturen vs. einfache Farben}
 
-Die Assets in Tricks ´n´ Treats werden größtenteils Textur-Atlasse verwenden um, Speicherplatz als auch Draw Calls zu sparen. Dabei werden diese Texturen meist aus einfachen Farben bestehen oder per Hand gezeichnet. Assets, die nicht im Hintergrund stehen oder besonders klein sind, brauchen keine gezeichnete Textur, da es nicht auffällt, wenn sie simpel texturiert werden, wodurch zusätzlich an Texturauflösung gespart weden kann. Daher würden die spielbaren Charaktere oder die Assets für die Strecke nur einfach texturiert werden. Dabei liegt ein großer Fokus darauf, dass die UV-Map aller Objekte so performant wie möglich genutzt wird, damit man die Auflösung der Textur noch weiter reduzieren kann.
+Die Assets in Tricks ´n´ Treats werden größtenteils Texture Atlases verwenden um, Speicherplatz als auch Draw Calls zu sparen. Dabei werden diese Texturen meist aus einfachen Farben bestehen oder per Hand gezeichnet. Assets, die nicht im Hintergrund stehen oder besonders klein sind, brauchen keine gezeichnete Textur, da es nicht auffällt, wenn sie simpel texturiert werden, wodurch zusätzlich an Texturauflösung gespart weden kann. Daher würden die spielbaren Charaktere oder die Assets für die Strecke nur einfach texturiert werden. Dabei liegt ein großer Fokus darauf, dass die UV-Map aller Objekte so performant wie möglich genutzt wird, damit man die Auflösung der Textur noch weiter reduzieren kann.
 Die Assets im VR-Raum, wie bspw. Items und der Arbeitsplatz des VR-Spielers können hingegen handgezeichnete Texturen verwenden. Dekorative Objekte können dennoch auf einer einzigen Textur texturiert werden. Hierbei gilt es besonders auf die Qualität der UV-Map zu achten.
 
-\subsubsection{Atlassing in Tricks ´n´ Treats}
+\subsubsection{Atlasing in Tricks ´n´ Treats}
 
-Das Problem an Textur Atlassen ist, dass diese Methode um einiges Zeitintensiver ist als für jedes Objekt eine einzelne Textur zu erstellen. Das liegt vor allem daran, dass trotz der gruppieren aller UV-Maps eine gute Organisation für die Atlasse gebraucht wird. Bspw. sollten die Item-Texturen von den Charakter-Texturen getrennt ein. Auch mit guter Organisation, wird um einiges mehr Zeit gebraucht, um die Texturen zu bearbeiten. Der notwendige Zeitaufwand sollte es doch im Falle von Tricks ´n´ Treats wert sein, da man hiermit an Anzahl an Texturen, Rendering Kosten, Speicherplatz und Auflösung sparen kann.
+Das Problem an Texture Atlases ist, dass diese Methode um einiges Zeitintensiver ist als für jedes Objekt eine einzelne Textur zu erstellen. Das liegt vor allem daran, dass trotz der gruppieren aller UV-Maps eine gute Organisation für die Atlases gebraucht wird. Bspw. sollten die Item-Texturen von den Charakter-Texturen getrennt ein. Auch mit guter Organisation, wird um einiges mehr Zeit gebraucht, um die Texturen zu bearbeiten. Der notwendige Zeitaufwand sollte es doch im Falle von Tricks ´n´ Treats wert sein, da man hiermit an Anzahl an Texturen, Rendering Kosten, Speicherplatz und Auflösung sparen kann.
 
 \subsection{Texture Baking als Alternative}
 
 Eine Alternative zur LOD-Methode ist das Texture-Baking. Diese könnte zusätzlich zu den Texturen eingesetzt werden, um die Faceanzahl zu reduzieren. Einkerbung in Holz oder die Rinnen einer Ziegelsteinwand könnten mithilfe dieser Methode simpel dargestellt werden. Ähnlich wie bei LODs werden dafür Varianten von demselben Asset benötigt. Im Falle vom Texture Baking, braucht man eine Highpoly und eine Lowpoly Version vom selben Mesh. Die Details des Highpoly-Meshes werden schließlich auf einer Normal-Map generiert und übertragen. Nun kann das das Highpoly-Mesh verworfen werden und gegen das Lowpoly-Mesh ausgetauscht werden, welches mit der angehängten Normal-Map beinahe identisch aussehen sollte.
 
-\subsubsection{Normal Maps oder Textur Atlasse}
+\subsubsection{Normal Map oder Texture Atlas}
 
-Obwohl Normal-Maps die Anzahl an benötigten Faces reduzieren, sind sie nicht immer vorteilhaft. Wird ein oder mehrere Textur Atlasse benutzt, so muss man für jedes Objekt eine Highpoly und Lowpoly Verion erstellen, diese UV-Unwrappen und schließlich Texture Baken. Dies ist ein besonders langwieriger Prozess, welcher manuell ausgeführt werden muss. Bei einzelnen Objekten mit eigener Textur würde sich Texture Baking besser eignen als bei Atlassen. Somit sind Normal-Maps in Tricks ´n´ Treats meist unpraktisch, außer man würde die Atlasse durch einzelne Texturen austauschen.
+Obwohl Normal-Maps die Anzahl an benötigten Faces reduzieren, sind sie nicht immer vorteilhaft. Wird ein oder mehrere Texture Atlase benutzt, so muss man für jedes Objekt eine Highpoly und Lowpoly Verion erstellen, diese UV-Unwrappen und schließlich Texture Baken. Dies ist ein besonders langwieriger Prozess, welcher manuell ausgeführt werden muss. Bei einzelnen Objekten mit eigener Textur würde sich Texture Baking besser eignen als das Atlasing. Somit sind Normal-Maps in Tricks ´n´ Treats meist unpraktisch, außer man würde die Atlases durch einzelne Texturen austauschen.
 
 \chapter{Praktische Implementation in Tricks ´n´ Treats}
 
@@ -383,13 +383,13 @@ Diese Änderung war ebenfalls der Grund, warum kein Texture Baking oder Normal M
 
 \subsection{Textur Paletten}
 
-Texture Atlassing ist die hauptsächliche Methode zum Texturieren in Tricks n’Treats. Insgesamt werden nur drei Texturen verwendet, welche alle für eine jeweils spezifische Gruppe an Assets verwendet werden. 
+Texture Atlasing ist die hauptsächliche Methode zum Texturieren in Tricks n’Treats. Insgesamt werden nur drei Texturen verwendet, welche alle für eine jeweils spezifische Gruppe an Assets verwendet werden. 
 Man unterscheidet zwischen:
 Raum-Textur: Diese Textur ist für alle Assets im VR-Raum zuständig
 Charakter-Textur: Diese Textur ist für die spielbaren Charaktere zuständig
 Asset-Textur: Diese Textur ist für alle Assets auf der Strecke zuständig
 Diese Texturen sind jedoch eigentlich nur eine simple Farbpalette und bestehen nur aus wenigen Pixeln. Da alle Assets nur eingefärbte Faces haben, muss man nicht großartig auf die UV-Map und Textur achten. Da Eine Farbe eigentlich nur ein einziger Farbwert ist, kann dieser in einem einzigen Pixel dargestellt werden. Die UV-Map aller Objekte kann deswegen automatisch unwrapped werden, wobei sich die einzelnen Faces der UV-Map dann in einem einzelnen Farb-Pixel der Palette befinden. Die Raum-Textur ist dabei die größte Textur mit insgesamt 30x30 Pixeln.
-Mit dieser Methode fällt das UV-Mapping als auch Texturieren so gut wie weg und bietet dennoch die Vorteile eines Textur-Atlasses mit nur sehr wenig benötigtem Speicherplatz. Das einzige Problem, welches bei Technik vorkommt, ist eine etwas langwierige Veränderung. Es ist oftmals vorgekommen, dass mehrere Objekte denselben Farb-Pixel teilten. Wenn eine bestimmte Farbe für ein Asset nicht angemessen war und die Farbe verändert wurde, so wurde die Farbe für mehrere Assets gleichzeitig verändert, weswegen man nun allen betroffenen Assets neue Farben zuweisen musste.
+Mit dieser Methode fällt das UV-Mapping als auch Texturieren so gut wie weg und bietet dennoch die Vorteile eines Texture Atlases mit nur sehr wenig benötigtem Speicherplatz. Das einzige Problem, welches bei Technik vorkommt, ist eine etwas langwierige Veränderung. Es ist oftmals vorgekommen, dass mehrere Objekte denselben Farb-Pixel teilten. Wenn eine bestimmte Farbe für ein Asset nicht angemessen war und die Farbe verändert wurde, so wurde die Farbe für mehrere Assets gleichzeitig verändert, weswegen man nun allen betroffenen Assets neue Farben zuweisen musste.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{images/memic/ColorPalette_tnt}
@@ -400,4 +400,8 @@ Eine gute Erweiterung dieser Methode, wäre es wahrscheinlich, eine vorzeitliche
 \section{Rückblick}
 
 Mit dem Ende des Projektes lassen sich im Nachhinein manche Optimierungs-Methoden erneut betrachten. Das allgemein größte Problem während der Projekt-Ausführung ist ein Mangel an Organisation und eine Überschätzung des benötigten Zeitaufwandes. LODs und Billboards als Methoden, um für eine bessere Performance zu sorgen, sind jedoch nicht darauf ausgelegt, als eine Kombination aus PC und VR-Spiel zu funktionieren. Es wäre weitaus wichtiger gewesen, das Mergen von Objekten mehr zu beachten. Da jedes Assets gerendert werden muss, hätte man weniger Rendering-Aufrufe gebraucht, wenn viele kleinere Objekte zu einem einzigen Mesh zusammengetan wären.\cite[S.154]{_unity_game_optimization}
+
+\chapter{Conclusio}
+
+Die Performance Optimierung von 3D Assets ist eine wichtiger Teil des Gamedevelopments und auch 3D-Modelings. Die Beherschung dieser Technik erleichtert einen großen Teil des Entwicklungsprozesses und ermöglicht ein besseres Spielerlebnis. Vor allem in der Entwicklung von VR-Spielen, wie in diesem Projekt, ist dies sehr wichtig. Selbst in der einfachsten Form der Optimierung lässt sich  Tricks n’Treats hiermit verbessern. Da sich die Optimierung von Spiel zu Spiel nur geringfügig unterscheidet, ist der Optimierungspro
 
