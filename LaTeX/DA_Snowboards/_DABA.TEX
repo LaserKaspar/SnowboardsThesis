@@ -34,6 +34,11 @@
 \includepdf[page=-]{formulare/HTL_RDP_Dokumentation_DA_DE_A4}
 \includepdf[page=-]{formulare/HTL_RDP_Dokumentation_DA_EN_A4}
 
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
+
 %\begin{minipage}{\textwidth}
 %	\includepdf[scale=0.85,pages=1]{formulare/HTL_RDP_Titelseite_DA_A4}
 %\end{minipage}
@@ -55,6 +60,11 @@
 \include{kurzfassung}   % vom Team gemeinsam zu verfassen
 \include{abstract}		% vom Team gemeinsam in englisch zu verfassen	
 
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
+
 %%%----------------------------------------------------------
 \mainmatter         % Hauptteil (ab hier arab. Seitenzahlen)
 %%%----------------------------------------------------------
@@ -72,7 +82,6 @@
 \include {buketits/kapitel3}
 \include {buketits/kapitel4}
 
-
 \trennseite{Design eines asymmetrischen Local-Multiplayer-Party-Games unter Verwendung des MDA-Frameworks}{Felix Kaspar}{René Ksuz, BSc MA}{Mediendesign - Gamedesign}
 \include {kaspar/begriffe}
 \include {kaspar/spass}
@@ -80,6 +89,10 @@
 \include {kaspar/implementation}
 \include {kaspar/postmortem}
 
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 
 \trennseite{Farb- und Formpsychologie in asymmetrischen VR-Spielen}{Emma Wehinger}{Alexander Hager}{Mediendesign - Gamedesign}
 \include {wehinger/kapitel1}
@@ -100,6 +113,11 @@
 %\include {schueler_b/abbildungen}
 %\include {schueler_b/prozessoren}
 
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
+
 %%%----------------------------------------------------------
 %%%Anhang
 \appendix
@@ -110,6 +128,11 @@
 \include {memic/arbeitsprotokoll}
 \include{anhang_kooperationsvereinbarung}	% Kooperationsvereinbarung
 \include{anhang_datentraeger}	            % Inhalt des Datenträgers
+\includepdf[page=-, scale=0.9]{formulare/TNTComic}     % Comic
+
+% Auto break long urls in bib
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 %%%----------------------------------------------------------
 \printbibliography

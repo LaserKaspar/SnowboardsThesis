@@ -10,7 +10,7 @@ Schlechte Performance ist eindeutig erkennbar und kann in Spielen in zahlreichen
 
 \subsection{Was löst schlechte Performance aus?}
 
-Damit das Spiel auf einem Computer laufen kann, muss der Computer Arbeit verrichten, welche Rechenleistung benötigt. Die CPU (= Central Processing Unit) und GPU (= Graphics Processing Unit) benötigen Ressourcen, um Prozesse auf dem Computer laufen zu lassen. Genauso ist auch der RAM (=Random Access Memory) zu beachten. Die Überlastung dieser Komponenten führt daher zu verschlechterter Performance. Es ist wichtig anzumerken, dass die Überlastung sowohl durch die Entwickler als auch durch die Nutzer entstehen kann. Spiele können nur bis zu einem gewissen Grad auf eine bestimmte Mindestanforderung optimiert werden, wenn jedoch der Computer zu einer veralteten Generation angehört, wird jegliche Optimierung sinnlos sein. Die Entwickler sind zuständig für alle ausgeführten Prozesse während der Laufzeit des Spiels und deswegen in vielen Instanzen hauptverantwortlich für ein schlecht laufendes Spiel.
+Damit das Spiel auf einem Computer laufen kann, muss der Computer Arbeit verrichten, welche Rechenleistung benötigt. Die CPU (= Central Processing Unit) und GPU (= Graphics Processing Unit) benötigen Ressourcen, um Prozesse auf dem Computer laufen zu lassen. Genauso ist auch der RAM (=Random Access Memory) zu beachten. Die Überlastung dieser Komponenten führt daher zu verschlechterter Performance. Es ist wichtig anzumerken, dass die Überlastung sowohl durch die Entwickler als auch durch die Nutzer entstehen kann.\cite[17]{_unity_game_optimization} Spiele können nur bis zu einem gewissen Grad auf eine bestimmte Mindestanforderung optimiert werden, wenn jedoch der Computer zu einer veralteten Generation angehört, wird jegliche Optimierung sinnlos sein. Die Entwickler sind zuständig für alle ausgeführten Prozesse während der Laufzeit des Spiels und deswegen in vielen Instanzen hauptverantwortlich für ein schlecht laufendes Spiel.
 
 \section{Rendering \& die VR Kamera}
 
@@ -18,8 +18,8 @@ Damit das Spiel auf einem Computer laufen kann, muss der Computer Arbeit verrich
 \subsection{Rendering}
 
 Rendering ist ein Fachausdruck aus der Computer-Grafik. Rendering umschreibt jenen technischen Prozess, mit welchem die GPU  und CPU durch Rohdaten ein Bild auf einem Bildschirm generiert. Rendering ist daher Grund, weshalb unser Computer während der gesamten Laufzeit ein Bild darstellen kann. Daraus folgt, dass jedes 3D-Assets und ebenso jedes Spiel mittels Rendering ein Bild anzeigt. In Spielen und 3D-Modeling wird zwischen zwei wichtigen Arten von Rendering unterschieden:
-Real-Time Rendering: Hier handelt es sich um alle Rendering-Prozesse, in Echtzeit (Realtime) bzw. während der Laufzeit berechnet werden und deswegen für interaktive Ereignisse nützlich sind.
-Offline-Rendering ist das Gegenstück zum Real-Time-Rendering. Hierbei wird ein Bild vorzeitig fertig berechnet und erspart während der Laufzeit einiges an Leistung.
+Real-Time Rendering: Hier handelt es sich um alle Rendering-Prozesse, in Echtzeit (Realtime) bzw. während der Laufzeit berechnet werden und deswegen für interaktive Ereignisse nützlich sind.\cite{_guide_to_Build_3D_Character}
+Offline-Rendering ist das Gegenstück zum Real-Time-Rendering. Hierbei wird ein Bild vorzeitig fertig berechnet und erspart während der Laufzeit einiges an Leistung.\cite{_guide_to_Build_3D_Character}
 Wie bereits erklärt, kann ein Spiel ohne Rendering kein Bild ausgeben. Damit ein Bild ausgegeben werden kann, wird in Game-Engines, wie die Unity-Engine, eine virtuelle Kamera benötigt. Diese virtuelle Kamera ist schlussendlich die Perspektive , aus welcher Nutzer das Spiel erleben werden. Die Perspektive kann von Spiel zu Spiel variieren und bestimmt die Stimmung und das Erlebnis des Spieles. Der tatsächliche Rendering-Prozess ist dabei nicht abhängig von der Kamera und bleibt in den meisten Umständen gleich.
 Es ist wichtig anzumerken, dass die Anzahl der aktiven Kameras in der Game-Szene die Anzahl an einzelnen Rendering-Prozessen erhöht. Jede aktive Kamera muss mittels CPU und GPU gerendert werden und erhöht dabei die Rechenlast.
 Als Beispiel nehmen wir eine Unity-Szene, in welcher sich drei Objekte und zwei Kameras befinden, die aus unterschiedlichen Winkeln auf die Objekte zeigen. Obwohl es sich immer noch um drei Gegenstände in jeder Kameras handelt, müssen alle Objekte aus jeder Kamera gerendert werden, weswegen nun 6 Objekte gerendert werden müssen.
@@ -42,7 +42,7 @@ Der Zweck von Virtual Reality ist es, einen möglichst immersiven Raum darzustel
 
 \section{Mesh Optimierung}
 
-Game-Assets lassen sich mit den Requisiten in Filmen vergleichen. Assets beziehen sich auf jene digitale bzw. virtuelle Gegenstände, welche für die Spielentwicklung benötigt werden. Hierzu gelten zweiD Art und 3D Models, Animationen oder Audiofiles. Die 3D-Assets werden von 3D-Artists erstellt und in das Spiel importiert. Hier kann es sich um jeden möglichen Gegenstand, wie bspw. eine Tasse oder ein Charakter handeln.
+Game-Assets lassen sich mit den Requisiten in Filmen vergleichen. Assets beziehen sich auf jene digitale bzw. virtuelle Gegenstände, welche für die Spielentwicklung benötigt werden. Hierzu gelten zweiD Art und 3D Models, Animationen oder Audiofiles. Die 3D-Assets werden von 3D-Artists erstellt und in das Spiel importiert. Hier kann es sich um jeden möglichen Gegenstand, wie bspw. eine Tasse oder ein Charakter handeln.\cite{_unity_game_optimization}
 
 \subsection{Das Mesh}
 
