@@ -1,6 +1,6 @@
 # Tricks 'n' Treats (Snowbords) - Thesis
 
-This is the Diploma-Thesis that accompanies the Game-Project ["Tricks 'N' Treats"](https://github.com/LaserKaspar/Snowboards/tree/main). 
+This is the Diploma-Thesis that accompanies the Game-Project ["Tricks 'n' Treats"](https://github.com/LaserKaspar/Snowboards/tree/main). 
 A [preview/download](https://github.com/LaserKaspar/SnowboardsThesis/blob/main/docs/thesis-compressed.pdf) of the PDF file is also available.
 
 ## Kurzfassung
