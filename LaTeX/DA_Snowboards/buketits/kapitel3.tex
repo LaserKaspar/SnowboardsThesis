@@ -1,5 +1,5 @@
 \chapter{Umsetzung der PC- und VR-Welt}
-\section{Level Aufbau}
+\section{Levelaufbau}
 Jedes Level in \emph{Tricks ´n´ Treats} ist ähnlich aufgebaut. 
 In der Mitte befindet sich der Berg, auf dem die Snowboardenden fahren, und rund herum befindet sich der Raum des VR-Spielenden. Die PC-Spielenden starten oben auf dem Berggipfel und fahren den Hang bis zum Ende der Piste hinab. Der VR-Spielende kann mit einem Joystick auf seinem Controller den Berg rotieren, um sich besser auf der Strecke zu orientieren und die Spielenden in Sicht zu behalten. Währenddessen kann er hinter sich bestimmte Zauberkugeln aufheben und auf den PC-Spielenden anwenden.
 
@@ -13,14 +13,14 @@ In der Mitte befindet sich der Berg, auf dem die Snowboardenden fahren, und rund
 \section{VR-Charakter} \label{simon_vrspieler}
 Der VR-Charakter besteht aus mehreren Systemen, die zusammenarbeiten. In \emph{Tricks ´n´ Treats} sind die Kamera und Hände mithilfe der Steam-VR Integration für Unity gemacht. Der VR-Charakter verwendet die physikalischen Hände und die "`Player"' Komponente, die beide von Steam-VR bereitgestellt werden. Ein großes Problem unseres Spiels ist, dass der VR-Charakter, der physikalische Hände besitzt, nicht richtig skaliert werden kann. Sobald dieser skaliert wird, funktionieren die Hand-Collider nicht mehr planmäßig. Die Lösung dieses Problems ist in \ref{simon_problems} erklärt.
 
-\subsection{Zauber und Interaktionssystem}
+\subsection{Zauber -und Interaktionssystem}
 Für die Basis des Interaktionssystems in \emph{Tricks ´n´ Treats}, dient das System, das Steam-VR für Unity bereitstellt. Auf jedem Objekt, mit dem der VR-Spielende interagieren kann, befindet sich das "`Interactable"' Script, dass von Steam-VR bereitgestellt ist. Unser eigenes System für die Zauberkugeln hakt sich in dieses Script ein und kann somit bestimmte Eigenschaften leichter implementieren. Somit wurde eine Hervorhebung für Objekte geschaffen, mit denen interagiert werden kann und gleichzeitig wird auf die Eingabe des VR-Controllers reagiert. Wenn eine Zauberkugel mit einem Objekt kollidiert (während man sie in der Hand hält), wird dann mit dem von Steam vorgegebenen, "`Velocity Estimator"' die Aufprallgeschwindigkeit ausgerechnet und je nach Geschwindigkeit ein Zauberspruch gewirkt.
 
 \subsection{VR-Umgebung}
 Die Form der VR-Umgebung basiert auf einem Kreis, bei dem sich der Berg in der Mitte befindet und der Spielbereich des VR-Spielenden auf einem Ring um den Berg.
 
 \section{PC-Charakter}
-\subsection{Charakter Größe}
+\subsection{Charakter-Größe}
 Die PC-Charaktere sind sehr klein. Das kommt daher, dass der VR-Charakter nicht skaliert werden kann und daher die PC-Charaktere runter skaliert werden müssen. Das Iterieren der Werte für den Character-Controller ist durch die geringe Größe etwas komplexer und ungewohnt. Dadurch, dass die PC-Charaktere so viel kleiner sind, muss auch die Schwerkraft anders eingestellt sein. Diese haben eine viel geringere Schwerkraft als die physikalischen Objekte, die sich im VR-Bereich befinden.
 
 \subsection{Fähigkeiten}
@@ -49,10 +49,10 @@ Für die Effizienz der Collider gilt Sphere>Capsule>Box>Mesh. Das heißt, dass e
 	\caption{Korrekte Collider}
 \end{figure}
 
-\subsection{Object Pooling}
+\subsection{Object-Pooling}
 In \emph{Tricks ´n´ Treats} gibt es keine Objekte, die gepoolt werden könnten, um Rechenleistung zu sparen. Somit gibt es im gesamten Projekt kein Pooling System.
 
-\subsection{Drawcall Batching}
+\subsection{Drawcall-Batching}
 In \emph{Tricks ´n´ Treats} wird sowohl Static als auch Dynamic-Batching angewendet. Um dynamisch zu batchen werden Meshes mit weniger Vertices verwendet, wobei alle dasselbe Material nutzen. Für die Textur des Materials wird ein Textur-Atlas verwendet, der alle Farben aller Meshes beinhaltet. Dies gilt für alle Meshes der Umgebung. Da die Spielenden wegen einiger Rahmenbedingungen des Dynamic-Batching nicht gebatcht werden können, verwenden diese einen anderen Atlas und Material. "Static" ist alles, was sich aus der Sicht der PC-Spielenden nicht bewegt. Das heißt beispielsweise der Berg und die Objekte auf diesem. Hindernisse, die zerbrechen oder sich bewegen können jedoch nicht "Static" sein.
 
 \subsection{Bewegungskrankheit und Rotationsproblem}
