@@ -3,6 +3,8 @@
 This is the Diploma-Thesis that accompanies the Game-Project ["Tricks 'n' Treats"](https://github.com/LaserKaspar/Snowboards/tree/main). 
 A [preview/download](https://github.com/LaserKaspar/SnowboardsThesis/blob/main/docs/_DABA_Original-compressed.pdf) of the PDF file is also available.
 
+![typical situation](/LaTeX/DA_Snowboards/images/TypischeSituation.png)
+
 ## Kurzfassung
 
 Diese Diplomarbeit befasst sich mit der Entwicklung des asymmetrischen lokalen Multiplayer-Spieles Tricks ‘n’ Treats. 
